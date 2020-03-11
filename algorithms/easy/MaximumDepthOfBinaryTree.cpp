@@ -37,13 +37,15 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
- 
+
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
         if (root == NULL) {
             return 0;
-        } 
+        }
+
+        // using recursion to traverse to tree’s leaf and add up depth
 
         return 1 + std::max(maxDepth(root->right), maxDepth(root->left));
     }
