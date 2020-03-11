@@ -6,7 +6,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | # | Title | Difficulty | Completed |
 |:----:|:----|:-----:|:-----:|
 | 617 | [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees) | Easy | V |
-| 104 | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree) | Easy |  |
+| 104 | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree) | Easy | V |
 | 136 | [Single Number](https://leetcode.com/problems/single-number) | Easy |  |
 | 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree) | Easy |  |
 | 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy |  |
