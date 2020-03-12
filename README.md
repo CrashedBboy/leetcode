@@ -9,7 +9,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 104 | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree) | Easy | V |
 | 136 | [Single Number](https://leetcode.com/problems/single-number) | Easy | V |
 | 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree) | Easy | V |
-| 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy |  |
+| 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy | V |
 | 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy |  |
 | 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy |  |
 | 448 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array) | Easy |  |
