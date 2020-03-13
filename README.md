@@ -11,7 +11,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree) | Easy | V |
 | 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy | V |
 | 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy | V |
-| 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy |  |
+| 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy | V |
 | 448 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array) | Easy |  |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy |  |
 | 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | Easy |  |
