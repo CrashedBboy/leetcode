@@ -10,7 +10,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 136 | [Single Number](https://leetcode.com/problems/single-number) | Easy | V |
 | 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree) | Easy | V |
 | 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy | V |
-| 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy |  |
+| 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy | V |
 | 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy |  |
 | 448 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array) | Easy |  |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy |  |
