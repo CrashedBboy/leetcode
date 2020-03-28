@@ -14,7 +14,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy | V |
 | 448 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array) | Easy | V |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy | V |
-| 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | Easy |  |
+| 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | Easy | V |
 | 543 | [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree) | Easy |  |
 | 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs) | Easy |  |
 | 53 | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray) | Easy |  |
