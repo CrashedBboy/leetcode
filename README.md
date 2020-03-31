@@ -18,8 +18,8 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 543 | [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree) | Easy | V |
 | 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs) | Easy | V |
 | 53 | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray) | Easy | V |
-| 101 | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree) | Easy |  |
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum) | Easy |  |
+| 101 | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree) | Easy | V |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum) | Easy | V |
 | 437 | [Path Sum III](https://leetcode.com/problems/path-sum-iii) | Easy |  |
 | 198 | [House Robber](https://leetcode.com/problems/house-robber) | Easy |  |
 | 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy |  |
