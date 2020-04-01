@@ -22,7 +22,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum) | Easy | V |
 | 437 | [Path Sum III](https://leetcode.com/problems/path-sum-iii) | Easy | V |
 | 198 | [House Robber](https://leetcode.com/problems/house-robber) | Easy | V |
-| 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy |  |
+| 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy | V |
 | 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle) | Easy |  |
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy |  |
 | 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy |  |
