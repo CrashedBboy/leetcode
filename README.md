@@ -25,7 +25,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy | V |
 | 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle) | Easy | V |
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy |  |
-| 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy |  |
+| 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy | V |
 | 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists) | Easy | V |
 | 581 | [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray) | Easy |  |
 | 338 | [Counting Bits](https://leetcode.com/problems/counting-bits) | Medium |  |
