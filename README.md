@@ -70,7 +70,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 438 | [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string) | Medium |  |
 | 148 | [Sort List](https://leetcode.com/problems/sort-list) | Medium |  |
 | 139 | [Word Break](https://leetcode.com/problems/word-break) | Medium |  |
-| 56 | [Merge Intervals](https://leetcode.com/problems/merge-intervals) | Medium |  |
+| 56 | [Merge Intervals](https://leetcode.com/problems/merge-intervals) | Medium | X |
 | 221 | [Maximal Square](https://leetcode.com/problems/maximal-square) | Medium |  |
 | 142 | [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii) | Medium |  |
 | 34 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array) | Medium |  |
