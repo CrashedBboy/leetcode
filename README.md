@@ -24,7 +24,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 198 | [House Robber](https://leetcode.com/problems/house-robber) | Easy | V |
 | 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy | V |
 | 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle) | Easy | V |
-| 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy |  |
+| 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy | V |
 | 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy | V |
 | 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists) | Easy | V |
 | 581 | [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray) | Easy |  |
@@ -70,7 +70,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 438 | [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string) | Medium |  |
 | 148 | [Sort List](https://leetcode.com/problems/sort-list) | Medium |  |
 | 139 | [Word Break](https://leetcode.com/problems/word-break) | Medium |  |
-| 56 | [Merge Intervals](https://leetcode.com/problems/merge-intervals) | Medium | X |
+| 56 | [Merge Intervals](https://leetcode.com/problems/merge-intervals) | Medium | V |
 | 221 | [Maximal Square](https://leetcode.com/problems/maximal-square) | Medium |  |
 | 142 | [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii) | Medium |  |
 | 34 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array) | Medium |  |
