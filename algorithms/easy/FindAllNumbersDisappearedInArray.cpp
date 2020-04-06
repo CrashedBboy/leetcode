@@ -20,6 +20,8 @@ Output:
 [5,6]
 
 **********************************************************************************/
+
+
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int> &nums) {
@@ -31,9 +33,9 @@ public:
         vector<int> result;
 
         // place every element nums[i] to position “nums[i] - 1” by swapping between position nums[i]-1 and i
-        for (int num : nums){
-            while (nums[num - 1] != num){
-                swap(num, nums[num - 1]);
+        for (int i = 0; i < nums.size(); i++) {
+            while (nums[nums[i] - 1] != nums[i]) {
+                swap(nums[i], nums[nums[i] - 1]);
             }
         }
 

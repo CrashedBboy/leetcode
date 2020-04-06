@@ -28,7 +28,7 @@ Explanation: There are three ways to climb to the top.
 
 **********************************************************************************/
 
-// use recursion: f(n) = f(n-1) + f(n-2) with memorize technique
+// use recursion: f(n) = f(n-1) + f(n-2) with memoize technique
 
 class Solution {
 public:
