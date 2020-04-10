@@ -29,7 +29,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists) | Easy | V |
 | 581 | [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray) | Easy | V |
 | 338 | [Counting Bits](https://leetcode.com/problems/counting-bits) | Medium | V |
-| 406 | [Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height) | Medium |  |
+| 406 | [Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height) | Medium | V |
 | 739 | [Daily Temperatures](https://leetcode.com/problems/daily-temperatures) | Medium |  |
 | 94 | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal) | Medium |  |
 | 46 | [Permutations](https://leetcode.com/problems/permutations) | Medium |  |
