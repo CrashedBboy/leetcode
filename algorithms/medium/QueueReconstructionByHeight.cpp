@@ -79,12 +79,14 @@ public:
     vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
 
         // check input
-        if (people.size() == 0) {
+        if (people.empty()) {
             return people;
         }
         
         // sort the list first
-        std::sort(people.begin(), people.end(), sortByFrontThenHeight);
+        std::sort(people.begin(), people.end(), sortByFrontThenHeight); // O(NlogN)
+
+        vector<vector<int>> results;
 
         // fix the list
         for (int i = 0; i < people.size(); i++) {
@@ -93,26 +95,28 @@ public:
             int maxFrontGreater = people[i][1];
 
             int frontGreater = 0;
-            for (int j = 0; j < i; j++) {
+            int j; // for iterating
+            for (j = 0; j < results.size(); j++) {
 
-                if (people[j][0] >= height) {
+                if (results[j][0] >= height) {
 
                     frontGreater += 1;
+
+                    if (frontGreater > maxFrontGreater) {
+
+                        break;
+                    }
                 }
+            }
 
-                if (frontGreater > maxFrontGreater) {
-
-                    // move element to position 'j', not 'j - 1'
-                    vector<int> tmp = {height, maxFrontGreater};
-
-                    people.erase(people.begin() + i); // O(N)
-                    people.insert(people.begin() + j, tmp); // O(N)
-                
-                    break;
-                }
+            // now j is the position people[i] will insert into
+            if (j == people.size()) {
+                results.push_back(people[i]); // O(1)
+            } else {
+                results.insert(results.begin() + j, people[i]); // O(N)
             }
         }
 
-        return people;
+        return results;
     }
 };
