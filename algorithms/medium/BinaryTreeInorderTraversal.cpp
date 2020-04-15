@@ -56,3 +56,17 @@ public:
         return sequence;
     }
 };
+
+// [another solution]
+// iteration, using stack
+
+class Solution {
+
+private:
+
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+
+
+    }
+};
