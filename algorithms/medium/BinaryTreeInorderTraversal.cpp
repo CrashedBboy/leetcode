@@ -18,6 +18,12 @@ Input: [1,null,2,3]
 Output: [1,3,2]
 **********************************************************************************/
 
+// [another solution]
+// iteration, using stack
+
+// continusly push left node into stack until null
+// pop stack => add to sequence => push it right
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -27,46 +33,38 @@ Output: [1,3,2]
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
 class Solution {
 
 private:
 
-    void traverse(TreeNode* node, vector<int>* sequence) {
-
-        if (node == NULL) {
-            return;
-        }
-
-        traverse(node->left, sequence);
-        sequence->push_back(node->val);
-        traverse(node->right, sequence);
-    }
-
 public:
     vector<int> inorderTraversal(TreeNode* root) {
 
-        vector<int> sequence;
-        
+        vector<int> results;
+
         if (root == NULL) {
-            return sequence;
+
+            return results;
         }
 
-        traverse(root, &sequence);
+        stack<TreeNode*> nodeStack;
+        TreeNode* currentNode = root;
+        while (currentNode != NULL || !nodeStack.empty()) {
 
-        return sequence;
-    }
-};
+            while (currentNode != NULL) {
 
-// [another solution]
-// iteration, using stack
+                nodeStack.push(currentNode);
+                currentNode = currentNode->left;
+            }
 
-class Solution {
+            currentNode = nodeStack.top();
+            results.push_back(currentNode->val);
+            nodeStack.pop();
 
-private:
+            currentNode = currentNode->right;
+        }
 
-public:
-    vector<int> inorderTraversal(TreeNode* root) {
-
-
+        return results;
     }
 };
