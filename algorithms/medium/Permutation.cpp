@@ -54,9 +54,10 @@ private:
                     grow(nums, occupied, sequence, results);
                 }
 
+                // to restore the changes
+
                 // pop back of sequence at the end
                 sequence.pop_back();
-
                 // label the element as not occupied
                 occupied[i] = false;
             }
