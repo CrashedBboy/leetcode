@@ -36,19 +36,14 @@ public:
             return results;
         }
 
-        map<int, int> frequencyTable;
+        unordered_map<int, int> frequencyTable;
         for (int i = 0; i < nums.size(); i++) {
 
             frequencyTable[nums[i]] += 1;
         }
 
         // initilaize the buckets (frequency range: 0 ~ N)
-        vector<vector<int>> frequencyBuckets;
-        for (int i = 0; i <= nums.size(); i++) {
-
-            vector<int> list;
-            frequencyBuckets.push_back(list);
-        }
+        vector<vector<int>> frequencyBuckets(nums.size() + 1);
 
         for (auto p : frequencyTable) {
 

@@ -26,7 +26,7 @@ Note:
 class Solution {
 
 private:
-    bool pairComp(pair<int, int> p1, pair<int, int> p2) {
+    static bool pairComp(pair<int, int> p1, pair<int, int> p2) {
         
         return p1.second > p2.second;
     }
@@ -40,7 +40,7 @@ public:
             return results;
         }
 
-        map<int, int> frequency;
+        unordered_map<int, int> frequency;
         for (int i = 0; i < nums.size(); i++) {
 
             frequency[nums[i]] += 1;
