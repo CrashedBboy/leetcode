@@ -21,15 +21,11 @@ Note:
 
 // [idea]
 // use hast table to store each number's frequency
-// then sort the frequency, pick top K
+// then use bucket sort -> bucket[i] = list represents numbers who has frequency i 
 
 class Solution {
 
 private:
-    bool pairComp(pair<int, int> p1, pair<int, int> p2) {
-        
-        return p1.second > p2.second;
-    }
 
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -40,22 +36,39 @@ public:
             return results;
         }
 
-        map<int, int> frequency;
+        map<int, int> frequencyTable;
         for (int i = 0; i < nums.size(); i++) {
 
-            frequency[nums[i]] += 1;
+            frequencyTable[nums[i]] += 1;
         }
 
-        vector<pair<int, int>> frequencyList;
+        // initilaize the buckets (frequency range: 0 ~ N)
+        vector<vector<int>> frequencyBuckets;
+        for (int i = 0; i <= nums.size(); i++) {
 
-        for (auto p : frequency) {
-            frequencyList.push_back(p);
+            vector<int> list;
+            frequencyBuckets.push_back(list);
         }
 
-        sort(frequencyList.begin(), frequencyList.end(), pairComp);
+        for (auto p : frequencyTable) {
 
-        for (int i = 0; i < k; i++) {
-            results.push_back(frequencyList[i].first);
+            frequencyBuckets[p.second].push_back(p.first);
+        }
+
+        for (int i = frequencyBuckets.size() - 1; i >= 0; i--) {
+
+            if (!frequencyBuckets[i].empty()) {
+
+                for (int j = 0; j < frequencyBuckets[i].size(); j++) {
+
+                    results.push_back(frequencyBuckets[i][j]);
+
+                    if (results.size() == k) {
+
+                        return results;
+                    }
+                }
+            }
         }
 
         return results;

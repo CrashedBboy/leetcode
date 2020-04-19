@@ -63,19 +63,17 @@ public:
     Heap (vector<pair<int, int>> list) {
 
         _list = list;
-
-        heapify();
     }
 
     int popRoot() {
+
+        heapify();
 
         int rootNumber = _list[0].first;
 
         _list[0] = _list[_list.size() - 1];
 
         _list.pop_back();
-
-        heapify();
 
         return rootNumber;
     }
@@ -99,17 +97,9 @@ public:
         }
 
         map<int, int> frequency;
-        map<int, int>::iterator it;
         for (int i = 0; i < nums.size(); i++) {
 
-            if (frequency.find(nums[i]) != frequency.end()) {
-
-                frequency[nums[i]] += 1;
-            
-            } else {
-
-                frequency[nums[i]] = 1;
-            }
+            frequency[nums[i]] += 1;
         }
 
         vector<pair<int, int>> frequencyList;
