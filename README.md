@@ -36,7 +36,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 22 | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses) | Medium | V |
 | 647 | [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings) | Medium | V |
 | 347 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements) | Medium | V |
-| 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self) | Medium |  |
+| 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self) | Medium | V |
 | 78 | [Subsets](https://leetcode.com/problems/subsets) | Medium |  |
 | 48 | [Rotate Image](https://leetcode.com/problems/rotate-image) | Medium |  |
 | 39 | [Combination Sum](https://leetcode.com/problems/combination-sum) | Medium |  |
