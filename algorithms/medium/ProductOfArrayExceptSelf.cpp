@@ -34,12 +34,14 @@ Could you solve it with constant space complexity?
 // but if we iterate through one direction, we cannot get the cumulative product of numbers behind K
 // so we have to iterate again from opposite direction
 
+// when there's only one zero in array, mark the rest of elements behind zero as 0
+
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         
         // initialize all results to be 1
-        vector<int> results(nums.size(), 1);
+        vector<int> results(nums.size(), 0);
 
         // 1st iteration
         int cumulative = 1;
@@ -47,7 +49,16 @@ public:
 
             results[i] = cumulative;
 
-            cumulative = cumulative * nums[i];
+            if (nums[i] != 0) {
+
+                cumulative = cumulative * nums[i];
+            
+            } else {
+
+                // the rest results will always be zero
+                break;
+            }
+            
         }
 
         // 2nd iteration
@@ -56,7 +67,20 @@ public:
 
             results[i] = results[i] * cumulative;
 
-            cumulative = cumulative * nums[i];
+            if (nums[i] != 0) {
+
+                cumulative = cumulative * nums[i];
+            
+            } else {
+
+                // the rest results will always be zero
+                for (int j = i - 1; j >=0; j--) {
+
+                    results[j] = 0;
+                }
+
+                break;
+            }
         }
 
         return results;
