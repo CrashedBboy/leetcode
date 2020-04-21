@@ -25,7 +25,7 @@ Output:
 **********************************************************************************/
 
 // [idea]
-// dynamic programming: recursion with mormoization
+// dynamic programming: recursion with mormoization (bottom up)
 
 class Solution {
 
