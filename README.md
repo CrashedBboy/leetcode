@@ -40,7 +40,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 78 | [Subsets](https://leetcode.com/problems/subsets) | Medium | V |
 | 48 | [Rotate Image](https://leetcode.com/problems/rotate-image) | Medium |  |
 | 39 | [Combination Sum](https://leetcode.com/problems/combination-sum) | Medium |  |
-| 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams) | Medium |  |
+| 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams) | Medium | V |
 | 287 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number) | Medium |  |
 | 215 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array) | Medium |  |
 | 102 | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal) | Medium |  |
