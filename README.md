@@ -39,7 +39,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self) | Medium | V |
 | 78 | [Subsets](https://leetcode.com/problems/subsets) | Medium | V |
 | 48 | [Rotate Image](https://leetcode.com/problems/rotate-image) | Medium | V |
-| 39 | [Combination Sum](https://leetcode.com/problems/combination-sum) | Medium |  |
+| 39 | [Combination Sum](https://leetcode.com/problems/combination-sum) | Medium | V |
 | 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams) | Medium | V |
 | 287 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number) | Medium |  |
 | 215 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array) | Medium |  |
