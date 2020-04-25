@@ -1,3 +1,7 @@
+// reference
+// https://openhome.cc/Gossip/CppGossip/Lambda.html
+// https://docs.microsoft.com/zh-tw/cpp/cpp/lambda-expressions-in-cpp?view=vs-2019
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
