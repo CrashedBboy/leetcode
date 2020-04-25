@@ -26,11 +26,7 @@ int main() {
 	// [Min Heap]
 
 	auto descCmp = [](int a, int b) { return a > b; };
-	priority_queue<int, vector<int>, decltype(descCmp)> minHeap(descCmp);
-
-	for (int n : numbers) {
-		minHeap.push(n);
-	}
+	priority_queue<int, vector<int>, decltype(descCmp)> minHeap(numbers.begin(), numbers.end(), descCmp);
 
 	while (!minHeap.empty()) {
 	
