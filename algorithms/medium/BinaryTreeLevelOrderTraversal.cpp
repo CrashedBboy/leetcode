@@ -39,21 +39,16 @@ return its level order traversal as:
 
 class LevelNode {
 
-private:
+public:
+
     TreeNode* _node;
     int _level;
-
-public:
 
     LevelNode(TreeNode* node, int level) {
 
         _node = node;
         _level = level;
     }
-
-    int getLevel() { return _level; }
-
-    TreeNode* getNode() { return _node; }
 };
 
 class Solution {
@@ -63,7 +58,6 @@ public:
         vector<vector<int>> results;
 
         if (root == NULL) {
-
             return results;
         }
 
@@ -75,27 +69,25 @@ public:
         while (!bfsQueue.empty()) {
 
             LevelNode front = bfsQueue.front();
-            TreeNode* n = front.getNode();
-            int level = front.getLevel();
 
             // if level list doesn't exist
-            if (results.size() == front.getLevel()) {
+            if (results.size() == front._level) {
 
-                vector<int> newLevel = { n->val };
+                vector<int> newLevel = { front._node->val };
                 results.push_back(newLevel);
             
             } else {
 
-                results[level].push_back(n->val);
+                results[front._level].push_back(front._node->val);
             }
 
-            if (n->left != NULL) {
-                LevelNode newLevelNode(n->left, level + 1);
+            if (front._node->left != NULL) {
+                LevelNode newLevelNode(front._node->left, front._level + 1);
                 bfsQueue.push(newLevelNode);
             }
 
-            if (n->right != NULL) {
-                LevelNode newLevelNode(n->right, level + 1);
+            if (front._node->right != NULL) {
+                LevelNode newLevelNode(front._node->right, front._level + 1);
                 bfsQueue.push(newLevelNode);
             }
 
