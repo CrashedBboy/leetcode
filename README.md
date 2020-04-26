@@ -43,7 +43,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams) | Medium | V |
 | 287 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number) | Medium | V |
 | 215 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array) | Medium | V |
-| 102 | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal) | Medium |  |
+| 102 | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal) | Medium | V |
 | 62 | [Unique Paths](https://leetcode.com/problems/unique-paths) | Medium |  |
 | 64 | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) | Medium |  |
 | 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii) | Medium |  |
