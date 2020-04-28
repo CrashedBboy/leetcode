@@ -45,7 +45,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 215 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array) | Medium | V |
 | 102 | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal) | Medium | V |
 | 62 | [Unique Paths](https://leetcode.com/problems/unique-paths) | Medium |  |
-| 64 | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) | Medium |  |
+| 64 | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) | Medium | V |
 | 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii) | Medium |  |
 | 96 | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees) | Medium |  |
 | 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water) | Medium |  |
