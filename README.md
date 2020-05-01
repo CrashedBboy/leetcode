@@ -46,7 +46,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 102 | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal) | Medium | V |
 | 62 | [Unique Paths](https://leetcode.com/problems/unique-paths) | Medium | V |
 | 64 | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum) | Medium | V |
-| 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii) | Medium |  |
+| 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii) | Medium | V |
 | 96 | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees) | Medium | V |
 | 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water) | Medium |  |
 | 394 | [Decode String](https://leetcode.com/problems/decode-string) | Medium |  |
