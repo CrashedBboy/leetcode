@@ -17,20 +17,19 @@ public:
 
 	void increaseTen() {
 
-		mu.lock(); // waiting until it get the lock
+		lock_guard<mutex> lockGuard(mu);
 
-		for (int i = 0; i < 10; i++) { _count += 1; }
+		for (int i = 0; i < 10; i++) {
+			_count += 1;
+		}
 		
-		mu.unlock(); // release lock
-
-        // [what problem might happen?]
-        // if a exception thorwn between mutex.lock() and mutex.unlock()
-        // unlock() won't be called, thus other thread will not get the lock
-        // solution: use lock_guard<mutex> instead
+		// when exiting a scope,
+		// all variables' destructor will be executed (in reverse order), including lock_guard
+		// the mutex.unlock() will be called in destructor
+		// ---> auto release the lock
 	}
 
 	void printCount() {
-
 		cout << "count: " << _count << endl;
 	}
 };
