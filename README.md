@@ -87,7 +87,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters) | Medium |  |
 | 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | Medium |  |
 | 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree) | Medium |  |
-| 15 | [3Sum](https://leetcode.com/problems/3sum) | Medium |  |
+| 15 | [3Sum](https://leetcode.com/problems/3sum) | Medium | V |
 | 312 | [Burst Balloons](https://leetcode.com/problems/burst-balloons) | Hard |  |
 | 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water) | Hard |  |
 | 297 | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree) | Hard |  |
