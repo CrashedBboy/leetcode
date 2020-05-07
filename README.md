@@ -50,7 +50,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 96 | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees) | Medium | V |
 | 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water) | Medium | V |
 | 394 | [Decode String](https://leetcode.com/problems/decode-string) | Medium | V |
-| 621 | [Task Scheduler](https://leetcode.com/problems/task-scheduler) | Medium |  |
+| 621 | [Task Scheduler](https://leetcode.com/problems/task-scheduler) | Medium | V |
 | 114 | [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list) | Medium |  |
 | 494 | [Target Sum](https://leetcode.com/problems/target-sum) | Medium |  |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal) | Medium |  |
