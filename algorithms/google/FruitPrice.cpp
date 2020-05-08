@@ -89,3 +89,103 @@ grapefruit 120 150 140
 Case #3:
 apple 100 101 100
 **********************************************************************************/
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <utility>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+
+bool lexiCmp(pair<string, int> a, pair<string, int> b) {
+
+    string strA = a.first;
+    string strB = b.first;
+
+    int n = min(strA.size(), strB.size());
+
+    for (int i = 0; i < n; i++) {
+
+        if (strA[i] == strB[i]) {
+            continue;
+        } else {
+            return strA[i] < strB[i];
+        }
+    }
+
+    if (strA.size() == strB.size()) {
+        return a.second < b.second;
+    } else {
+        return strA.size() < strB.size();
+    }
+
+    return true;
+}
+
+int main() {
+
+    int TEST_N;
+    cin >> TEST_N;
+
+    for (int testCase = 1; testCase <= TEST_N; testCase++) {
+
+        cout << "Case #" << testCase << ":" << endl;
+
+        int N;
+        cin >> N;
+
+        vector<pair<string, int>> itemPrices;
+
+        for (int i = 0; i < N; i++) {
+            string itemName;
+            int itemPrice;
+
+            cin >> itemName >> itemPrice;
+
+            itemPrices.push_back(pair<string, int>(itemName, itemPrice));
+        }
+
+        // sort the list: lexi order then price order
+        sort(itemPrices.begin(), itemPrices.end(), lexiCmp);
+
+        // print lowest, highest, average
+        string currentItemName = itemPrices[0].first;
+        int itemStartFrom = 0;
+
+        for (int i = 0; i < N; i++) {
+
+            if (itemPrices[i].first != currentItemName) {
+
+                double sum = 0;
+                for (int j = itemStartFrom; j < i; j++) {
+                    sum += itemPrices[j].second;
+                }
+
+                int avg = (int)floor(sum / (i - itemStartFrom));
+
+                cout << currentItemName << " " << itemPirces[itemStartFrom].second << " "
+                    << itemPrices[i - 1].second << " " << avg << endl;
+
+                currentItemName = itemPrices[i].first;
+                itemStartFrom = i;
+            }
+        }
+
+        // for the last item
+        double sum = 0;
+        for (int j = itemStartFrom; j < N; j++) {
+            sum += itemPrices[j].second;
+        }
+
+        int avg = (int)floor(sum / (N - itemStartFrom));
+
+        cout << currentItemName << " " << itemPirces[itemStartFrom].second << " "
+            << itemPrices[N - 1].second << " " << avg << endl;
+
+        cout << endl;
+    }
+
+    return 0;
+}
