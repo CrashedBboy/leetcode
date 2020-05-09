@@ -108,3 +108,96 @@ Sorry 309
 70 70 0
 100 99 1
 *********************************************************************************************/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <utility>
+
+using namespace std;
+
+bool appleCmp(pair<int, int> a, pair<int, int> b) {
+
+    if (a.second == b.second) {
+        return a.first > b.first;
+    } else {
+        return a.second < b.second;
+    }
+}
+
+// sort apple class by class index
+bool appleClassCmp(pair<int, int> a, pair<int, int> b) {
+    return a.first < b.first;
+}
+
+int main() {
+
+    int classNumber;
+    int totalNumber;
+
+    cin >> classNumber >> totalNumber;
+
+    // validate input
+    if (classNumber < 0 || totalNumber < 0) {
+        cout << "Invalid Input" << endl;
+        return 0;
+    }
+
+    vector<pair<int, int>> appleNumbers; // <class index, remaining>
+    vector<int> appleOriginalNumbers;
+
+    for (int i = 0; i < classNumber; i++) {
+        int n;
+        cin >> n;
+
+        // validate input
+        if (n < 0) {
+            cout << "Invalid Input" << endl;
+            return 0;
+        }
+
+        appleNumbers.push_back(pair<int, int>(i, n));
+        appleOriginalNumbers.push_back(n);
+    }
+
+    // sort
+    sort(appleNumbers.begin(), appleNumbers.end(), appleCmp);
+
+    int remainingOrdered = totalNumber;
+    bool meet = false;
+
+    // get apples from largest classes
+    for (int i = totalNumber - 1; i >= 0; i--) {
+
+        int consumption = min(appleNumbers[i].second, remainingOrdered);
+        if (i == 0 && consumption == appleNumbers[i].second) {
+            // left 1 apple in stock
+            consumption -= 1;
+        }
+
+        appleNumbers[i].second -= consumption;
+        remainingOrdered -= consumption;
+
+        if (remainingOrdered == 0) {
+            meet = true;
+            break;
+        }
+    }
+
+    // re-sort by class index
+    sort(appleNumbers.begin(), appleNumbers.end(), appleClassCmp);
+
+    // print
+    if (meet) {
+        cout << "Thanks " << totalNumber << endl;
+    } else {
+        cout << "Sorry " << (totalNumber - remainingOrdered) << endl;
+    }
+
+    for (int i = 0; i < classNumber; i++) {
+        cout << appleOriginalNumbers[i] << " " << (appleOriginalNumbers[i] - appleNumbers[i].second) << " "
+            << appleNumbers[i].second << endl;
+    }
+
+    return 0;
+}
