@@ -51,7 +51,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water) | Medium | V |
 | 394 | [Decode String](https://leetcode.com/problems/decode-string) | Medium | V |
 | 621 | [Task Scheduler](https://leetcode.com/problems/task-scheduler) | Medium | V |
-| 114 | [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list) | Medium |  |
+| 114 | [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list) | Medium | V |
 | 494 | [Target Sum](https://leetcode.com/problems/target-sum) | Medium |  |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal) | Medium |  |
 | 309 | [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown) | Medium |  |
