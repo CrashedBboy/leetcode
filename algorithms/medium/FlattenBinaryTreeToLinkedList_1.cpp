@@ -33,9 +33,9 @@ The flattened tree should look like:
 // idea
 /********************************************************************************** 
 
-in-place --> center(root) + left subtree sequence + right subtree sequence
-                            ---------------------   ---------------------
-                                (recursion)             (recusrion)
+pre-order flatten! --> center(root) + left subtree sequence + right subtree sequence
+                                      ---------------------   ---------------------
+                                          (recursion)             (recusrion)
 
 **********************************************************************************/
 
