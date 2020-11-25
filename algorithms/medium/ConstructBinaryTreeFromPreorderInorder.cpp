@@ -30,6 +30,8 @@ Return the following binary tree:
 Recursive divide-n-conquer
 https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/947448/2-Solution-or-Detailed-Explanation-with-Code
 
+Key: 1st node of pre-order sequence is root of tree
+
 *********************************************************************************************/
 
 /**
@@ -48,10 +50,25 @@ class Solution {
 
 private:
 
-    TreeNode* growTree(vector<int>& preorder, vector<int>& inorder, int inStart, int inEnd, int preIndex) {
+    TreeNode* growTree(vector<int>& preorder, vector<int>& inorder, int inStart, int inEnd, int preRootIndex) {
 
-        // preorder[preIndex] is the root of subtree
+        // boundry check
+        if (inStart > inEnd) {
+            return NULL;
+        }
 
+        // find index of root in in-order sequence
+        int inRootIndex = inStart;
+        while (inorder[inRootIndex] != preorder[preRootIndex]) {
+            inRootIndex += 1;
+        }
+
+        TreeNode* root = new TreeNode(preorder[preRootIndex]);
+
+        root->left = growTree(preorder, inorder, inStart, (inRootIndex-1), (preRootIndex+1));
+        root->right = growTree(preorder, inorder, (inRootIndex+1), inEnd, preRootIndex + (inRootIndex-inStart+1));
+
+        return root;
     }
 
 public:
