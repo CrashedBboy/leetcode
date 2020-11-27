@@ -21,6 +21,26 @@ Explanation: transactions = [buy, sell, cooldown, buy, sell]
 
 **********************************************************************************/
 
+// Idea
+/********************************************************************************** 
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75928/Share-my-DP-solution-(By-State-Machine-Thinking)
+
+There're 3 actions in total:
+1. do nothing (= cooldown)
+2. buy stock
+3. sell stock
+
+There're 3 states in total:
+1. S0: holding no stock, but can buy at the next price
+2. S1: holding a stock
+3. S2: holding no stock, but cannot buy at the next price (in cooldown)
+
+Dynamic Programming:
+
+s0[i] = profit earned so far at the i-th price and be at state of S0
+
+**********************************************************************************/
+
 #include <vector>
 #include <algorithm>
 #include <limits>
@@ -29,77 +49,27 @@ using namespace std;
 
 class Solution {
 
-private:
-
-    int INDEX_PADDING = 1;
-
-    int doTransaction(vector<int>& prices, vector<vector<vector<int>>>& memo, int currentIndex, int stockHolding, int stepsFromLatestSell) {
-
-        // borundary check
-        if (currentIndex == prices.size()) {
-            return 0;
-        }
-
-
-        if (stepsFromLatestSell > 1) {
-            if (memo[currentIndex][stockHolding+INDEX_PADDING][1] != NULL) {
-                return memo[currentIndex][stockHolding+INDEX_PADDING][1];
-            }
-        } else {
-            if (memo[currentIndex][stockHolding+INDEX_PADDING][0] != NULL) {
-                return memo[currentIndex][stockHolding+INDEX_PADDING][0];
-            }
-        }
-        
-
-        int maxProfit = numeric_limits<int>::min();
-        int p;
-        if (stockHolding != -1) {
-
-            // can sell
-            p = (prices[currentIndex] - prices[stockHolding]) + doTransaction(prices, memo, (currentIndex+1), -1, 1);
-            maxProfit = max(maxProfit, p);
-
-            // can do nothing
-            p = doTransaction(prices, memo, (currentIndex+1), stockHolding, (stepsFromLatestSell+1));
-            maxProfit = max(maxProfit, p);
-
-        } else {
-
-            if (stepsFromLatestSell > 1) {
-
-                // can buy
-                p = doTransaction(prices, memo, (currentIndex+1), currentIndex, (stepsFromLatestSell+1));
-                maxProfit = max(maxProfit, p);
-
-                // can do nothing
-                p = doTransaction(prices, memo, (currentIndex+1), stockHolding, (stepsFromLatestSell+1));
-                maxProfit = max(maxProfit, p);
-
-            } else {
-
-                // can do: nothing
-                p = doTransaction(prices, memo, (currentIndex+1), stockHolding, (stepsFromLatestSell+1));
-                maxProfit = max(maxProfit, p);
-            }
-        }
-
-        if (stepsFromLatestSell > 1) {
-            memo[currentIndex][stockHolding+INDEX_PADDING][1] = maxProfit;
-        } else {
-            memo[currentIndex][stockHolding+INDEX_PADDING][0] = maxProfit;
-        }
-
-        return maxProfit;
-    }
-
 public:
     int maxProfit(vector<int>& prices) {
+        
+        if (prices.size() == 0) return 0;
 
-        int N = prices.size();
+        vector<int> s0(prices.size(), 0);
+        vector<int> s1(prices.size(), 0);
+        vector<int> s2(prices.size(), 0);
 
-        vector<vector<vector<int>>> memo(N+1, vector<vector<int>>(N+1+INDEX_PADDING, vector<int>(2, NULL)));
+        // initialize
+        s0[0] = 0;
+        s1[0] = -prices[0]; // already bought at price 0-th
+        s2[0] = numeric_limits<int>::min();
 
-        return doTransaction(prices, memo, 0, -1, 2);
+        for (int i = 1; i < prices.size(); i++) {
+
+            s0[i] = max(s0[i-1], s2[i-1]);
+            s1[i] = max(s1[i-1], s0[i-1] - prices[i]);
+            s2[i] = s1[i-1] + prices[i];
+        }
+
+        return max(s0[prices.size()-1], s2[prices.size()-1]);
     }
 };
