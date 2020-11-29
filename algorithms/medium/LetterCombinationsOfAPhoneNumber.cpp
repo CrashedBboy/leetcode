@@ -39,33 +39,32 @@ Constraints:
 // Idea:
 
 // max combination number = 4^4 = 256
-// using recursion to find all combinations, then push to answer vectors
+// backtracking: using recursion to find all combinations, then push to answer vectors
 
 #include <unordered_map>
 #include <string>
+#include <cmath>
 
 using namespace std;
-
-#define COMB_MAX 256
 
 class Solution {
 
 private:
 
-    unordered_map<char, vector<string>> digit_map;
+    vector<string> digit_map;
 
     vector<string> answer;
     int answerIndicator = -1;
 
     void compute(string& digits, int currentIndex, string currentCombined) {
 
-        char d = digits[currentIndex];
-
         if (currentIndex == digits.size()) {
-
             answerIndicator += 1;
             answer[answerIndicator] = currentCombined;
+            return;
         }
+        
+        int d = digits[currentIndex] - '0';
 
         for (int i = 0; i < digit_map[d].size(); i++) {
             compute(digits, (currentIndex+1), currentCombined+digit_map[d][i]);
@@ -79,20 +78,14 @@ public:
             return vector<string>(0);
         }
 
-        answer = vector<string>(COMB_MAX);
+        int maxCombinations = pow(4, digits.size());
+        answer = vector<string>(maxCombinations);
 
-        digit_map['2'] = {"a", "b", "c"};
-        digit_map['3'] = {"d", "e", "f"};
-        digit_map['4'] = {"g", "h", "i"};
-        digit_map['5'] = {"j", "k", "l"};
-        digit_map['6'] = {"m", "n", "o"};
-        digit_map['7'] = {"p", "q", "r", "s"};
-        digit_map['8'] = {"t", "u", "v"};
-        digit_map['9'] = {"w", "x", "y", "z"};
+        digit_map = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         compute(digits, 0, "");
 
-        if (answerIndicator < (COMB_MAX - 1)) {
+        if (answerIndicator < (maxCombinations - 1)) {
             answer.erase(answer.begin() + answerIndicator + 1, answer.end());
         }
         
