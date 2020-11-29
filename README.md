@@ -55,7 +55,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 494 | [Target Sum](https://leetcode.com/problems/target-sum) | Medium | V |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal) | Medium | V |
 | 309 | [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown) | Medium | V |
-| 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number) | Medium |  |
+| 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number) | Medium | V |
 | 200 | [Number of Islands](https://leetcode.com/problems/number-of-islands) | Medium |  |
 | 75 | [Sort Colors](https://leetcode.com/problems/sort-colors) | Medium |  |
 | 253 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii) | Medium |  |
