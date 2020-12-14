@@ -34,7 +34,7 @@ Follow up:
 // idea:
 // https://leetcode.com/problems/sort-colors/discuss/26500/Four-different-solutions
 
-class Solution {
+class Solution1 {
 public:
     void sortColors(vector<int>& nums) {
         
@@ -54,3 +54,35 @@ public:
         for (int i = redCount+whiteCount; i < redCount+whiteCount+blueCount; i++) { nums[i] = 2; }
     }
 };
+
+class Solution2 {
+
+public:
+
+    void sortColors(vector<int>& nums) {
+
+        int redIndex = -1, whiteIndex = -1, blueIndex = -1;
+
+        for (int i = 0; i < nums.size(); i++) {
+            
+            // red
+            if (nums[i] == 0) {
+                redIndex += 1; whiteIndex += 1; blueIndex += 1;
+                nums[blueIndex] = 2; nums[whiteIndex] = 1; nums[redIndex] = 0;
+            }
+
+            // white
+            else if (nums[i] == 1) {
+                whiteIndex += 1; blueIndex += 1;
+                nums[blueIndex] = 2; nums[whiteIndex] = 1;
+            }
+
+            // blue
+            else if (nums[i] == 2) {
+                blueIndex += 1;
+                nums[blueIndex] = 2;
+            }
+        }
+    }
+
+}
