@@ -84,5 +84,36 @@ public:
             }
         }
     }
+}
 
+#include <vector>
+#include <algorithm>
+
+class Solution3 {
+
+public:
+
+    void sortColors(vector<int>& nums) {
+
+        // set two pivot: 
+        // redPivot: items before red pivot are all red
+        // bluePivot: items after blue pivot are all blue
+
+        int redPivot = 0;
+        int bluePivot = nums.size() - 1;
+
+        for (int i = 0; i <= bluePivot; i++) {
+
+            if (nums[i] == 0 && i != redPivot) {
+                swap(nums[i], nums[redPivot]);
+                i -= 1; // re-look the new swapped element in the next iteration
+                redPivot += 1;
+            }
+            else if (nums[i] == 2 && i != bluePivot) {
+                swap(nums[i], nums[bluePivot]);
+                i -= 1;
+                bluePivot -= 1;
+            }
+        }
+    }
 }
