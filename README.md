@@ -58,8 +58,8 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number) | Medium | V |
 | 200 | [Number of Islands](https://leetcode.com/problems/number-of-islands) | Medium | V |
 | 75 | [Sort Colors](https://leetcode.com/problems/sort-colors) | Medium | V |
-| 253 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii) | Medium |  |
-| 279 | [Perfect Squares](https://leetcode.com/problems/perfect-squares) | Medium |  |
+| 253 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii) | Medium | NA |
+| 279 | [Perfect Squares](https://leetcode.com/problems/perfect-squares) | Medium | V |
 | 208 | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree) | Medium |  |
 | 560 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k) | Medium |  |
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree) | Medium |  |
