@@ -5,6 +5,7 @@
         "vector": "cpp",
         "limits": "cpp",
         "xstring": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "iostream": "cpp"
     }
 }
