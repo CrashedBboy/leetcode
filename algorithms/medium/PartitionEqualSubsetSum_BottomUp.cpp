@@ -2,6 +2,9 @@
 // observation: if the sum of whole array is odd -> it's not possible to be partitioned
 // smaller question: find an subset which has sum equal to half of total sum
 
+// reference:
+// https://leetcode.com/problems/partition-equal-subset-sum/discuss/90592/01-knapsack-detailed-explanation
+
 #include <algorithm>
 #include <vector>
 
