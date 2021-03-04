@@ -105,3 +105,27 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | Hard |  |
 | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses) | Hard |  |
 | 10 | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching) | Hard |  |
+
+## Essential Concepts
+
+* Data Structure:
+  - String
+  - Array
+  - Tree
+  - Hash Table
+  - Stack
+  - Queue
+  - Linked List
+  - Heap
+  - Set
+* Problem Solving Techniques:
+  - Divide and Conquer
+  - Dynamic Programming: Top down / Bottom Up
+  - Backtracking
+  - Recursion
+* Tree Traversal
+* Tree Search: DFS / BFS
+* Binary Search
+* Sort
+* Bit Manipulation
+* Shortest Path
