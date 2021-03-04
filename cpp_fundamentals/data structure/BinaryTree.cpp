@@ -1,201 +1,309 @@
 #include <iostream>
 #include <string>
 #include <queue>
-#include <math>
+#include <cmath>
 
 using namespace std;
 
 
 class BinaryTreeNode {
 
-    public:
+public:
 
-        BinaryTreeNode* left;
-        BinaryTreeNode* right;
-        int data;
+    BinaryTreeNode() : data{ 0 }, left{ NULL }, right{ NULL }  {  }
 
-        BinaryTreeNode : data {0}, left {NULL}, right {NULL} () {  }
+    BinaryTreeNode(int value) : left{ NULL }, right{ NULL }  {
+        data = value;
+    }
 
-        BinaryTreeNode : left {NULL}, right {NULL} (int value) {
-            data = value;
-        }
+    BinaryTreeNode(int value, BinaryTreeNode* leftChild, BinaryTreeNode* rightChild) {
+        data = value;
+        left = leftChild;
+        right = rightChild;
+    }
 
-        BinaryTreeNode (int value, TreeNode* leftChild, TreeNode* rightChild) {
-            data = value;
-            left = leftChild;
-            right = rightChild;
-        }
+    BinaryTreeNode* left;
+    BinaryTreeNode* right;
+    int data;
 };
 
 class BinaryTree {
 
-    public:
+public:
 
-        TreeNode* root;
+    BinaryTreeNode* root;
 
-        BinaryTree (int rootValue) {
+    BinaryTree(int rootValue) {
 
-            root = new TreeNode(rootValue);
+        root = new BinaryTreeNode(rootValue);
+    }
+
+    // construct tree from level-by-level sequence
+    BinaryTree(vector<int> nums) {
+
+        if (nums.size() == 0) {
+            root = new BinaryTreeNode();
+            return;
         }
 
-        // construct tree from level-by-level sequence
-        BinaryTree (vector<int> nums) {
+        root = new BinaryTreeNode(nums[0]);
 
-            if (nums.size() == 0) {
-                root = new TreeNode();
-                return;
-            }
+        // idea: use queue to store node to be append
+        queue<pair<BinaryTreeNode*, bool>> parents; // pair <node, append on left?>
+        parents.push(pair<BinaryTreeNode*, bool>(root, true));
+        parents.push(pair<BinaryTreeNode*, bool>(root, false));
 
-            root = new TreeNode(nums[0]);
+        for (int i = 1; i < nums.size(); i++) {
+            pair<BinaryTreeNode*, bool> p = parents.front();
 
-            // idea: use queue to store node to be append
-            queue<pair<TreeNode*, bool>> parents; // pair <node, append on left?>
-            parents.push(pair<TreeNode*, bool> (root, true));
-            parents.push(pair<TreeNode*, bool> (root, false));
+            BinaryTreeNode* parentNode = p.first;
+            bool appendToLeft = p.second;
 
-            for (int i = 1; i < nums.size(); i++) {
-                pair<TreeNode*, bool> p = parents.front();
-
-                TreeNode* parentNode = p.first;
-                bool appendToLeft = p.second;
-
-                if (parentNode != NULL) {
-
-                    TreeNode* child;
-                    if (nums[i] != -1) {
-                        child = new TreeNode(nums[i]);
-                    } else {
-                        child = NULL;
-                    }
-
-                    if (appendToLeft) {
-                        parentNode->left = child;
-                    } else {
-                        parentNode->right = child;
-                    }
-
-                } else {
-
+            BinaryTreeNode* child;
+            if (parentNode != NULL) {
+                
+                if (nums[i] != -1) {
+                    child = new BinaryTreeNode(nums[i]);
+                }
+                else {
                     child = NULL;
                 }
 
-                parents.push(pair<TreeNode*, bool> (child, true));
-                parents.push(pair<TreeNode*, bool> (child, false));
-
-                parents.pop();
-            }
-        }
-
-        // construct tree from pre-order sequence and post-order sequence
-        BinaryTree (vector<int> preorderSequence, vector<int> inorderSequence) {
-
-        }
-
-        void print () {
-
-            if (root == NULL) {
-                cout << "The tree is empty." << endl;
-                return;
-            }
-
-            int currentLevel = 0;
-            int nodeAmountInLevel = 0;
-            int levelStartAt = 0;
-
-            vector<int> levelOrderNodes;
-            queue<TreeNode*> bfsQueue;
-            
-            bfsQueue.push(root);
-
-            while (bfsQueue.size() > 0) {
-
-                TreeNode* currentNode = bfsQueue.front();
-
-                if (currentNode != NULL) {
-                    bfsQueue.push(currentNode->left);
-                    bfsQueue.push(currentNode->right);
-
-                    levelOrderNodes.push(currentNode->data);
-                } else {
-                    bfsQueue.push(NULL); // virtual left child
-                    bfsQueue.push(NULL); // virtual right child
-
-                    levelOrderNodes.push(-1); // use -1 to indicate "NULL"
+                if (appendToLeft) {
+                    parentNode->left = child;
+                }
+                else {
+                    parentNode->right = child;
                 }
 
-                nodeAmountInLevel += 1;
-                int levelMaxNode = pow(2, currentLevel);
+            }
+            else {
 
-                // if the level if full: check whether they are all NULLs
-                if (nodeAmountInLevel == levelMaxNode) {
-                    bool isAllNull = true;
-                    for (int i = levelStartAt; i < levelStartAt + levelMaxNode; i++) {
-                        if (levelOrderNodes[i] != -1) {
-                            isAllNull = false;
-                            break;
-                        }
-                    }
+                child = NULL;
+            }
 
-                    if (isAllNull) {
+            parents.push(pair<BinaryTreeNode*, bool>(child, true));
+            parents.push(pair<BinaryTreeNode*, bool>(child, false));
 
-                        // not to print this level
+            parents.pop();
+        }
+    }
 
-                        // stop BFS
+    // construct tree from pre-order sequence and post-order sequence
+    BinaryTree(vector<int> preorderSequence, vector<int> inorderSequence) {
+
+    }
+
+    void print() {
+
+        if (root == NULL) {
+            cout << "The tree is empty." << endl;
+            return;
+        }
+
+        int currentLevel = 0;
+        int nodeAmountInLevel = 0;
+        int levelStartAt = 0;
+
+        vector<int> levelOrderNodes;
+        queue<BinaryTreeNode*> bfsQueue;
+
+        bfsQueue.push(root);
+
+        while (bfsQueue.size() > 0) {
+
+            BinaryTreeNode* currentNode = bfsQueue.front();
+
+            if (currentNode != NULL) {
+                bfsQueue.push(currentNode->left);
+                bfsQueue.push(currentNode->right);
+
+                levelOrderNodes.push_back(currentNode->data);
+            }
+            else {
+                bfsQueue.push(NULL); // virtual left child
+                bfsQueue.push(NULL); // virtual right child
+
+                levelOrderNodes.push_back(-1); // use -1 to indicate "NULL"
+            }
+
+            nodeAmountInLevel += 1;
+            int levelMaxNode = (int)pow(2, currentLevel);
+
+            // if the level if full: check whether they are all NULLs
+            if (nodeAmountInLevel == levelMaxNode) {
+                bool isAllNull = true;
+                for (int i = levelStartAt; i < levelStartAt + levelMaxNode; i++) {
+                    if (levelOrderNodes[i] != -1) {
+                        isAllNull = false;
                         break;
-
-                    } else {
-
-                        for (int i = levelStartAt; i < levelStartAt + levelMaxNode; i++) {
-                            cout << levelOrderNodes[i] << " ";
-                        }
-                        cout << endl;
-
-                        currentLevel += 1;
-                        nodeAmountInLevel = 0;
-                        levelStartAt += levelMaxNode;
                     }
                 }
 
-                bfsQueue.pop();
+                if (isAllNull) {
+
+                    // not to print this level
+
+                    // stop BFS
+                    break;
+                }
+                else {
+
+                    for (int i = levelStartAt; i < levelStartAt + levelMaxNode; i++) {
+                        cout << levelOrderNodes[i] << " ";
+                    }
+                    cout << endl;
+
+                    currentLevel += 1;
+                    nodeAmountInLevel = 0;
+                    levelStartAt += levelMaxNode;
+                }
             }
+
+            bfsQueue.pop();
+        }
+    }
+
+    int getMaximumDepth() {
+
+        return 0;
+    }
+
+    int getMinimumDepth() {
+
+        return 0;
+    }
+
+    BinaryTreeNode* searchBFS(BinaryTreeNode* node) {
+
+        return NULL;
+    }
+
+    BinaryTreeNode* searchDFS(BinaryTreeNode* node) {
+
+        return NULL;
+    }
+
+    vector<int> getInorderSequence() {
+
+    }
+
+    vector<int> getPreorderSequence() {
+
+    }
+
+    vector<int> getPostorderSequence() {
+
+    }
+
+    vector<int> getLevelSequence() {
+
+        vector<int> sequence = {};
+        vector<int> output = {};
+
+        int currentLevel = 0;
+        int nodeAmountInLevel = 0;
+        int levelStartAt = 0;
+
+        queue<BinaryTreeNode*> bfsQueue;
+        bfsQueue.push(root);
+
+        while (!bfsQueue.empty()) {
+
+            BinaryTreeNode* node = bfsQueue.front();
+
+            if (node != NULL) {
+                sequence.push_back(node->data);
+
+                bfsQueue.push(node->left);
+                bfsQueue.push(node->right);
+            }
+            else {
+                sequence.push_back(-1);
+
+                bfsQueue.push(NULL); // left child
+                bfsQueue.push(NULL); // right child
+            }
+
+            nodeAmountInLevel += 1;
+
+            int levelMaxNode = (int)pow(2, currentLevel);
+
+            if (nodeAmountInLevel == levelMaxNode) {
+
+                bool isAllNull = true;
+                for (int i = levelStartAt; i < levelStartAt + levelMaxNode; i++) {
+                    if (sequence[i] != -1) {
+                        isAllNull = false;
+                        break;
+                    }
+                }
+
+                if (isAllNull) {
+                    // stop BFS & serialization
+                    break;
+                }
+                else {
+                    for (int i = levelStartAt; i < levelStartAt + levelMaxNode; i++) {
+                        output.push_back(sequence[i]);
+                    }
+
+                    // reset for new level
+                    levelStartAt += levelMaxNode;
+                    nodeAmountInLevel = 0;
+                    currentLevel += 1;
+                }
+            }
+
+            bfsQueue.pop();
         }
 
-        int getMaximumDepth () {
+        return output;
+    }
 
-        }
+    static bool isIdentical(BinaryTree* t1, BinaryTree* t2) {
+        return false;
+    }
 
-        int getMinimumDepth () {
-
-        }
-
-        TreeNode* searchBFS (TreeNode* node) {
-
-        }
-
-        TreeNode* searchDFS (TreeNode* node) {
-
-        }
-
-        vector<int> getInorderSequence () {
-
-        }
-
-        vector<int> getPreorderSequence () {
-
-        }
-
-        vector<int> getPostorderSequence () {
-
-        }
-
-        vector<int> getLevelSequence () {
-
-        }
-
-    private:
+private:
 
 };
 
 int main() {
+
+    // test BinaryTree constructor 
+    vector<int> nodeValues = { 12, 3, 4, 1, 3, 2, -1 };
+    BinaryTree* tree = new BinaryTree(nodeValues);
+    BinaryTreeNode* root = tree->root;
+
+    cout << (root->right->right == NULL) << endl;
+    cout << (root->data == 12) << endl;
+    cout << (root->left->data == 3) << endl;
+
+    // test for print
+    tree->print();
+
+    delete tree; delete root;
+
+    // test for print
+    nodeValues = {12, 3, -1, 4, -1, -1, -1, 5};
+    tree = new BinaryTree(nodeValues);
+    root = tree->root;
+    tree->print();
+
+    delete tree; delete root;
+
+    // test for serlization
+    nodeValues = {12, 11, 1, 10, -1, -1, 3};
+    tree = new BinaryTree(nodeValues);
+    cout << "Original Tree:" << endl;
+    tree->print();
+
+    vector<int> sequence = tree->getLevelSequence();
+
+    BinaryTree* clone = new BinaryTree(sequence);
+    cout << "Cloned Tree:" << endl;
+    clone->print();
+
     return 0;
 }
