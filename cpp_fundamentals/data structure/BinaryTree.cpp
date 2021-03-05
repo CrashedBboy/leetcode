@@ -317,8 +317,28 @@ public:
         return output;
     }
 
-    static bool isIdentical(BinaryTree* t1, BinaryTree* t2) {
-        return false;
+    static bool isIdentical(BinaryTreeNode* t1, BinaryTreeNode* t2) {
+
+        if (t1 != NULL && t2 != NULL) {
+            if (t1->data != t2->data) {
+                return false;
+            }
+            else {
+                bool leftEquivalence = isIdentical(t1->left, t2->left);
+
+                if (leftEquivalence == false) {
+                    return false;
+                }
+
+                return isIdentical(t1->right, t2->right);
+            }
+        }
+        else if (t1 == NULL && t2 == NULL) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 private:
@@ -493,7 +513,7 @@ int main() {
 
     delete tree; delete clone;
 
-    // test for depth
+    // test for depth, search, traversal, building from traversal
     nodeValues = {12, 1, 4, 5, 22, 2, 3, 16};
 
     tree = new BinaryTree(nodeValues);
@@ -526,6 +546,14 @@ int main() {
     cout << "Built from pre-order seq & post-order seq" << endl;
     clone->print();
 
+    delete tree; delete clone;
+
+    // test for difference comparison
+    nodeValues = {1,2,3};
+    tree = new BinaryTree(nodeValues);
+    clone = new BinaryTree(nodeValues);
+
+    cout << "Tree identical?" << BinaryTree::isIdentical(tree->root, clone->root) << endl;
     delete tree; delete clone;
 
     return 0;
