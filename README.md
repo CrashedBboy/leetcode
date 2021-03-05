@@ -109,12 +109,12 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 ## Essential Concepts
 
 * Data Structure:
-  - String
-  - Array
-  - Tree
-  - Hash Table
-  - Stack
-  - Queue
+  - [x] String
+  - [x] Array
+  - [x] Tree
+  - [x] Hash Table
+  - [x] Stack
+  - [x] Queue
   - Linked List
   - Heap
   - Set
@@ -123,8 +123,8 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Dynamic Programming: Top down / Bottom Up
   - Backtracking
   - Recursion
-* Tree Traversal
-* Tree Search: DFS / BFS
+* [x] Tree Traversal
+* [x] Tree Search: DFS / BFS
 * Binary Search
 * Sort
 * Bit Manipulation

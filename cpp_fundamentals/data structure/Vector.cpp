@@ -77,3 +77,5 @@ int main() {
 
     return 0;
 }
+
+// push_back(), pop_back(), begin(), end(), front(), back(), size(), empty(), clear(), resize()
