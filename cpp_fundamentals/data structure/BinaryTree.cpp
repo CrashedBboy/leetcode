@@ -209,16 +209,33 @@ public:
         return _dfs(root, value);
     }
 
+    // in-order: left-root-right
     vector<int> getInorderSequence() {
 
+        vector<int> sequence = {};
+
+        _inorderTraverse(root, sequence);
+
+        return sequence;
     }
 
+    // pre-order: root-left-right
     vector<int> getPreorderSequence() {
 
+        vector<int> sequence = {};
+
+        _preorderTraverse(root, sequence);
+
+        return sequence;
     }
 
     vector<int> getPostorderSequence() {
 
+        vector<int> sequence = {};
+
+        _postorderTraverse(root, sequence);
+
+        return sequence;
     }
 
     vector<int> getLevelSequence() {
@@ -338,6 +355,39 @@ private:
             return rightResult;
         }
     }
+
+    void _inorderTraverse(BinaryTreeNode* root, vector<int>& sequence) {
+
+        if (root == NULL) {
+            return;
+        }
+
+        _inorderTraverse(root->left, sequence);
+        sequence.push_back(root->data);
+        _inorderTraverse(root->right, sequence);
+    }
+
+    void _preorderTraverse(BinaryTreeNode* root, vector<int>& sequence) {
+
+        if (root == NULL) {
+            return;
+        }
+
+        sequence.push_back(root->data);
+        _preorderTraverse(root->left, sequence);
+        _preorderTraverse(root->right, sequence);
+    }
+
+    void _postorderTraverse(BinaryTreeNode* root, vector<int>& sequence) {
+
+        if (root == NULL) {
+            return;
+        }
+
+        _preorderTraverse(root->left, sequence);
+        _preorderTraverse(root->right, sequence);
+        sequence.push_back(root->data);
+    }
 };
 
 int main() {
@@ -379,7 +429,7 @@ int main() {
     delete tree; delete clone;
 
     // test for depth
-    nodeValues = {12, 1, 4, 5, -1, 2, 3, 16};
+    nodeValues = {12, 1, 4, 5, 22, 2, 3, 16};
 
     tree = new BinaryTree(nodeValues);
     tree->print();
@@ -392,6 +442,19 @@ int main() {
 
     cout << "DFS: 2" << endl;
     tree->searchDFS(2);
+    cout << endl;
+
+    vector<int> inorder = tree->getInorderSequence();
+    cout << "In-Order:" << endl;
+    for (int i = 0; i < inorder.size(); i++) { cout << inorder[i] << ","; }
+    cout << endl;
+    vector<int> preorder = tree->getPreorderSequence();
+    cout << "Pre-Order:" << endl;
+    for (int i = 0; i < preorder.size(); i++) { cout << preorder[i] << ","; }
+    cout << endl;
+    vector<int> postorder = tree->getPostorderSequence();
+    cout << "Post-Order:" << endl;
+    for (int i = 0; i < postorder.size(); i++) { cout << postorder[i] << ","; }
     cout << endl;
 
     delete tree;
