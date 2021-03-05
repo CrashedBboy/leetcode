@@ -90,8 +90,22 @@ public:
     }
 
     // construct tree from pre-order sequence and post-order sequence
-    BinaryTree(vector<int> preorderSequence, vector<int> inorderSequence) {
+    BinaryTree(vector<int>& preorderSequence, vector<int>& inorderSequence) {
 
+        // indexes needed for recursion: 
+        // - parent node pointer
+        // - append to left or right
+        // - preorder sequence
+        // - preorder subtree sequence starts at
+        // - preorder subtree sequence ends at
+        // - inorder sequence
+        // - inorder subtree sequence starts at
+        // - inorder subtree sequence ends at
+        
+
+        _buildFromPreorderInorder(NULL, true,
+            preorderSequence, 0, preorderSequence.size() - 1,
+            inorderSequence, 0, inorderSequence.size() - 1);
     }
 
     void print() {
@@ -388,6 +402,57 @@ private:
         _preorderTraverse(root->right, sequence);
         sequence.push_back(root->data);
     }
+
+    void _buildFromPreorderInorder(BinaryTreeNode* parent, bool appendToLeft, 
+        vector<int>& preorderSequence, int preorderStartAt, int preorderEndAt, 
+        vector<int>& inorderSequence, int inorderStartAt, int inorderEndAt) {
+
+        // idea: deivide & conquer
+
+        // recursion boundry
+        if ((preorderEndAt - preorderStartAt) < 0) {
+            return;
+        }
+
+        int rootValue = preorderSequence[preorderStartAt];
+
+        // find root position in in-order sequence
+        int inorderRootPosition;
+        for (inorderRootPosition = inorderStartAt; inorderRootPosition <= inorderEndAt; inorderRootPosition++) {
+            if (inorderSequence[inorderRootPosition] == rootValue) {
+                break;
+            }
+        }
+
+        BinaryTreeNode* newNode;
+        if (parent == NULL) {
+            root = new BinaryTreeNode(rootValue);
+            newNode = root;
+        }
+        else {
+            newNode = new BinaryTreeNode(rootValue);
+            if (appendToLeft) {
+                parent->left = newNode;
+            }
+            else {
+                parent->right = newNode;
+            }
+        }
+
+        int leftSubTreeSize = inorderRootPosition - inorderStartAt;
+        int rightSubTreeSize = inorderEndAt - inorderRootPosition;
+
+        // left subtree
+        _buildFromPreorderInorder(newNode, true, 
+            preorderSequence, preorderStartAt+1, preorderStartAt+leftSubTreeSize, 
+            inorderSequence, inorderStartAt, inorderRootPosition-1);
+
+        // right subtree
+        _buildFromPreorderInorder(newNode, false, 
+            preorderSequence, preorderStartAt+leftSubTreeSize+1, preorderEndAt, 
+            inorderSequence, inorderRootPosition+1, inorderEndAt);
+        
+    }
 };
 
 int main() {
@@ -457,7 +522,11 @@ int main() {
     for (int i = 0; i < postorder.size(); i++) { cout << postorder[i] << ","; }
     cout << endl;
 
-    delete tree;
+    clone = new BinaryTree(preorder, inorder);
+    cout << "Built from pre-order seq & post-order seq" << endl;
+    clone->print();
+
+    delete tree; delete clone;
 
     return 0;
 }
