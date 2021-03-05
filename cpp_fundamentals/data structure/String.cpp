@@ -1,3 +1,5 @@
+// reference: http://www.cplusplus.com/reference/string/string/
+
 #include <iostream>
 #include <string>
 
@@ -5,31 +7,47 @@ using namespace std;
 
 int main() {
 
-    // [declaration]
+    // [constructor]
 
-    char ca[] = {'s', 'o', 'm', 'e', 't', 'h', 'i', 'n', 'g'};
-    string str1(ca, sizeof(ca)/sizeof(*ca)); // -> string str1(ca, 9)
+    // build from char array
+    char ca[] = {'A', 'B', 'C'};
+    string str1 (ca, sizeof(ca) / sizeof(*ca)); // -> string str1(ca, 3)
 
-    string str2 = "something new";
+    // build from null-terminated char array
+    char cb[] = {'A', 'B', 'C', 0};
+    string str2 (cb);
+
+    // assign const string
+    string str3 = "ABC";
+
+    // fill
+    string str4 (3, 'A');
+
+    // copy
+    string origin = "XYZ";
+    string str5 (origin);
 
     cout << "str1: " << str1 << endl;
     cout << "str2: " << str2 << endl;
-
-    // [assign]
-    str1 = ":)";
-    cout << "str1: " << str1 << endl;
+    cout << "str3: " << str3 << endl;
+    cout << "str4: " << str4 << endl;
+    cout << "str5: " << str5 << endl;
 
     // [concat]
-    str2 += str1;
+    str2 += "XYZ";
     cout << "str2: " << str2 << endl;
 
-    // [access]
-    for (int i = 0; i < str2.size(); i++) {
-        
-        if (str2[i] == 'e') {
-            cout << "found 'e' at position " << i << endl;
-        }
-    }
+    // [access & modify]
+    cout << str1[1] << endl;
+    str1[1] = 'D';
+    cout << str1 << endl;
+
+    // [push & pop]
+    str1.push_back('Y');
+    str1.push_back('Z');
+    str1.push_back('Z');
+    str1.pop_back();
+    cout << str1 << endl;
 
     return 0;
 }

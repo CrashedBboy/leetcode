@@ -1,3 +1,5 @@
+// reference: https://www.cplusplus.com/reference/vector/vector/
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -32,6 +34,9 @@ int main() {
 
     vector<int> vec4(5, 12);
     printVector(vec4, "vector4");
+
+    vector<int> vec5 = { 5, 4, 3, 2, 1 };
+    printVector(vec5, "Vector5");
 
     // [Access]
 

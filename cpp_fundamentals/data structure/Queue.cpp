@@ -1,3 +1,5 @@
+// reference: http://www.cplusplus.com/reference/queue/queue/
+
 #include <iostream>
 #include <queue>
 
@@ -21,3 +23,6 @@ int main() {
 
     return 0;
 }
+
+// FIFO queue
+// push(), pop(), front(), empty(), size(), back()
