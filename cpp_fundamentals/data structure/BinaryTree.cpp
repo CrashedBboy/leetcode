@@ -165,13 +165,11 @@ public:
     }
 
     int getMaximumDepth() {
-
-        return 0;
+        return _getMaximumDepth(root);
     }
 
     int getMinimumDepth() {
-
-        return 0;
+        return _getMinimumDepth(root);
     }
 
     BinaryTreeNode* searchBFS(BinaryTreeNode* node) {
@@ -267,6 +265,29 @@ public:
 
 private:
 
+    int _getMaximumDepth(BinaryTreeNode* root) {
+
+        if (root == NULL) {
+            return 0;
+        }
+
+        int leftDepth = _getMaximumDepth(root->left);
+        int rightDepth = _getMaximumDepth(root->right);
+
+        return 1 + max(leftDepth, rightDepth);
+    }
+
+    int _getMinimumDepth(BinaryTreeNode* root) {
+
+        if (root == NULL) {
+            return 0;
+        }
+
+        int leftDepth = _getMinimumDepth(root->left);
+        int rightDepth = _getMaximumDepth(root->right);
+
+        return 1 + min(leftDepth, rightDepth);
+    }
 };
 
 int main() {
@@ -304,6 +325,18 @@ int main() {
     BinaryTree* clone = new BinaryTree(sequence);
     cout << "Cloned Tree:" << endl;
     clone->print();
+
+    delete tree; delete clone;
+
+    // test for depth
+    nodeValues = {12, 1, 4, 5, -1, 2, 3, 16};
+
+    tree = new BinaryTree(nodeValues);
+    tree->print();
+    cout << "Tree maximum depth: " << tree->getMaximumDepth() << endl;
+    cout << "Tree minimum depth: " << tree->getMinimumDepth() << endl;
+
+    delete tree;
 
     return 0;
 }
