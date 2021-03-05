@@ -172,14 +172,41 @@ public:
         return _getMinimumDepth(root);
     }
 
-    BinaryTreeNode* searchBFS(BinaryTreeNode* node) {
+    BinaryTreeNode* searchBFS(int value) {
+
+        if (root == NULL) {
+            return NULL;
+        }
+
+        queue<BinaryTreeNode*> bfsQueue;
+        bfsQueue.push(root);
+
+        while (!bfsQueue.empty()) {
+
+            BinaryTreeNode* node = bfsQueue.front();
+
+            if (node != NULL) {
+
+                // testing
+                cout << node->data << ",";
+
+                if (node->data == value) {
+                    return node;
+                }
+                else {
+                    bfsQueue.push(node->left);
+                    bfsQueue.push(node->right);
+                }
+            }
+
+            bfsQueue.pop();
+        }
 
         return NULL;
     }
 
-    BinaryTreeNode* searchDFS(BinaryTreeNode* node) {
-
-        return NULL;
+    BinaryTreeNode* searchDFS(int value) {
+        return _dfs(root, value);
     }
 
     vector<int> getInorderSequence() {
@@ -288,6 +315,29 @@ private:
 
         return 1 + min(leftDepth, rightDepth);
     }
+
+    BinaryTreeNode* _dfs(BinaryTreeNode* root, int targetValue) {
+
+        if (root == NULL) {
+            return NULL;
+        }
+
+        // testing
+        cout << root->data << ",";
+
+        if (root->data == targetValue) {
+            return root;
+        }
+        else {
+            BinaryTreeNode* leftResult = _dfs(root->left, targetValue);
+            if (leftResult != NULL) {
+                return leftResult;
+            }
+
+            BinaryTreeNode* rightResult = _dfs(root->right, targetValue);
+            return rightResult;
+        }
+    }
 };
 
 int main() {
@@ -335,6 +385,14 @@ int main() {
     tree->print();
     cout << "Tree maximum depth: " << tree->getMaximumDepth() << endl;
     cout << "Tree minimum depth: " << tree->getMinimumDepth() << endl;
+
+    cout << "BFS: 2" << endl;
+    tree->searchBFS(2);
+    cout << endl;
+
+    cout << "DFS: 2" << endl;
+    tree->searchDFS(2);
+    cout << endl;
 
     delete tree;
 
