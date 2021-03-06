@@ -117,15 +117,23 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Queue
   - [x] Linked List
   - [x] Heap
-  - Set
+  - [x] Set
 * Problem Solving Techniques:
-  - Divide and Conquer
-  - Dynamic Programming: Top down / Bottom Up
-  - Backtracking
-  - Recursion
+  - [ ] Divide and Conquer
+  - [ ] Dynamic Programming: Top down / Bottom Up
+  - [ ] Backtracking
+  - [x] Recursion
 * [x] Tree Traversal
-* [x] Tree Search: DFS / BFS
-* Binary Search
-* Sort
+* Search:
+  - [x] Binary Search
+  - [x] DFS
+  - [x] BFS
+* Sort:
+  - [ ] Selection Sort
+  - [ ] Insertion Sort
+  - [ ] Bubble Sort
+  - [ ] Quick Sort
+  - [ ] Merge Sort
+  - [x] Heap Sort
 * Bit Manipulation
 * Shortest Path
