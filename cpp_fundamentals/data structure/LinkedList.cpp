@@ -178,7 +178,31 @@ class LinkedList {
             root = NULL;
         }
 
-        void reverse () {}
+        void reverse () {
+
+            if (root == NULL) {
+                return;
+            }
+
+            Node* previousNode = NULL;
+            Node* currentNode = root;
+            Node* tmp;
+            while (currentNode != NULL) {
+
+                // to REVERSE A-B-C, current at B
+                // 1. tmp = C
+                // 2. B.next = A
+                // 3. previous = B
+                // 4. current = tmp = C
+
+                tmp = currentNode->next;
+                currentNode->next = previousNode;
+                previousNode = currentNode;
+                currentNode = tmp;
+            }
+
+            root = previousNode;
+        }
 };
 
 
@@ -202,6 +226,22 @@ int main () {
     list->erase(1);
     list->erase(99);
     list->erase(1);
+    list->print();
+
+    delete list;
+
+    list = new LinkedList();
+    list->pushBack(12);
+    list->pushBack(16);
+    list->pushBack(20);
+    list->pushFront(1);
+    list->pushFront(3);
+    list->pushFront(5);
+
+    list->print();
+
+    list->reverse();
+
     list->print();
 
     return 0;
