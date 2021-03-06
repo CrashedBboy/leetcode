@@ -116,7 +116,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Stack
   - [x] Queue
   - Linked List
-  - Heap
+  - [x] Heap
   - Set
 * Problem Solving Techniques:
   - Divide and Conquer
