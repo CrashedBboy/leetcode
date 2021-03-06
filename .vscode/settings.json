@@ -11,6 +11,9 @@
         "type_traits": "cpp",
         "xlocnum": "cpp",
         "xtr1common": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "xtree": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp"
     }
 }

@@ -51,3 +51,8 @@ int main() {
 
     return 0;
 }
+
+// <string>
+// push_back(), pop_back(), size();
+// concat: +
+// access: []

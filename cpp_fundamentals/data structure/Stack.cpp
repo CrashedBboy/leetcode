@@ -24,3 +24,6 @@ int main() {
 
     return 0;
 }
+
+// <stack>
+// push(), pop(), top(), size(), empty()

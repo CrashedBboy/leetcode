@@ -115,7 +115,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Hash Table
   - [x] Stack
   - [x] Queue
-  - Linked List
+  - [x] Linked List
   - [x] Heap
   - Set
 * Problem Solving Techniques:
