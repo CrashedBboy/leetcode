@@ -129,9 +129,9 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] DFS
   - [x] BFS
 * Sort:
-  - [ ] Selection Sort
-  - [ ] Insertion Sort
-  - [ ] Bubble Sort
+  - [x] Selection Sort
+  - [x] Insertion Sort
+  - [x] Bubble Sort
   - [x] Quick Sort
   - [x] Merge Sort
   - [x] Heap Sort
