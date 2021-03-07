@@ -119,7 +119,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Heap
   - [x] Set
 * Problem Solving Techniques:
-  - [ ] Divide and Conquer
+  - [x] Divide and Conquer
   - [ ] Dynamic Programming: Top down / Bottom Up
   - [ ] Backtracking
   - [x] Recursion
@@ -132,8 +132,8 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [ ] Selection Sort
   - [ ] Insertion Sort
   - [ ] Bubble Sort
-  - [ ] Quick Sort
-  - [ ] Merge Sort
+  - [x] Quick Sort
+  - [x] Merge Sort
   - [x] Heap Sort
 * Bit Manipulation
 * Shortest Path
