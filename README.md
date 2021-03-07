@@ -120,8 +120,8 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Set
 * Problem Solving Techniques:
   - [x] Divide and Conquer
-  - [ ] Dynamic Programming: Top down / Bottom Up
-  - [ ] Backtracking
+  - [x] Dynamic Programming: Top down / Bottom Up
+  - [x] Backtracking
   - [x] Recursion
 * [x] Tree Traversal
 * Search:
