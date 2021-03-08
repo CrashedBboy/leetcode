@@ -135,5 +135,5 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Quick Sort
   - [x] Merge Sort
   - [x] Heap Sort
-* Bit Manipulation
+* [x] Bit Manipulation
 * Shortest Path
