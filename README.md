@@ -1,7 +1,7 @@
 # leetcode
 The journey of grinding [LeetCode](https://leetcode.com/).
 
-## Top 100 Liked Questions
+## Top Liked Questions
 
 | # | Title | Difficulty | Completed |
 |:----:|:----|:-----:|:-----:|
@@ -58,7 +58,6 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number) | Medium | V |
 | 200 | [Number of Islands](https://leetcode.com/problems/number-of-islands) | Medium | V |
 | 75 | [Sort Colors](https://leetcode.com/problems/sort-colors) | Medium | V |
-| 253 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii) | Medium | NA |
 | 279 | [Perfect Squares](https://leetcode.com/problems/perfect-squares) | Medium | V |
 | 208 | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree) | Medium | V |
 | 560 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k) | Medium | V |
@@ -88,23 +87,55 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | Medium |  |
 | 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree) | Medium |  |
 | 15 | [3Sum](https://leetcode.com/problems/3sum) | Medium | V |
-| 312 | [Burst Balloons](https://leetcode.com/problems/burst-balloons) | Hard |  |
-| 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water) | Hard |  |
-| 297 | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree) | Hard |  |
-| 128 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence) | Hard |  |
-| 301 | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses) | Hard |  |
-| 295 | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream) | Hard |  |
-| 72 | [Edit Distance](https://leetcode.com/problems/edit-distance) | Hard |  |
-| 239 | [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum) | Hard |  |
-| 23 | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists) | Hard |  |
-| 85 | [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle) | Hard |  |
-| 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram) | Hard |  |
-| 76 | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring) | Hard |  |
-| 124 | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum) | Hard |  |
-| 41 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive) | Hard |  |
-| 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | Hard |  |
-| 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses) | Hard |  |
-| 10 | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching) | Hard |  |
+
+## Top Interview Questions
+
+| # | Title | Difficulty | Completed |
+|:----:|:----|:-----:|:-----:|
+| 344 | [Reverse String](https://leetcode.com/problems/reverse-string) | Easy |  |
+| 104 | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree) | Easy | V |
+| 237 | [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list) | Easy |  |
+| 136 | [Single Number](https://leetcode.com/problems/single-number) | Easy | V |
+| 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy | V |
+| 412 | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz) | Easy |  |
+| 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) | Easy |  |
+| 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy | V |
+| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram) | Easy |  |
+| 122 | [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii) | Easy |  |
+| 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy | V |
+| 171 | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number) | Easy |  |
+| 13 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) | Easy |  |
+| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate) | Easy |  |
+| 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy | V |
+| 118 | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle) | Easy |  |
+| 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy |  |
+| 191 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits) | Easy |  |
+| 387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string) | Easy |  |
+| 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii) | Easy |  |
+| 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | Easy | V |
+| 202 | [Happy Number](https://leetcode.com/problems/happy-number) | Easy |  |
+| 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs) | Easy | V |
+| 101 | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree) | Easy | V |
+| 53 | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray) | Easy | V |
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | Easy |  |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum) | Easy | V |
+| 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy | V |
+| 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists) | Easy | V |
+| 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle) | Easy | V |
+| 66 | [Plus One](https://leetcode.com/problems/plus-one) | Easy | V |
+| 190 | [Reverse Bits](https://leetcode.com/problems/reverse-bits) | Easy |  |
+| 326 | [Power of Three](https://leetcode.com/problems/power-of-three) | Easy |  |
+| 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array) | Easy |  |
+| 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy | V |
+| 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy | V |
+| 172 | [Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes) | Easy |  |
+| 125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome) | Easy |  |
+| 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix) | Easy |  |
+| 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy |  |
+| 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx) | Easy |  |
+| 204 | [Count Primes](https://leetcode.com/problems/count-primes) | Easy |  |
+| 163 | [Missing Ranges](https://leetcode.com/problems/missing-ranges) | Easy |  |
+| 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | Easy |  |
 
 ## Essential Concepts
 
