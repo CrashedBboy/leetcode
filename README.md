@@ -166,5 +166,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - [x] Quick Sort
   - [x] Merge Sort
   - [x] Heap Sort
+* Graph:
+  - [ ] Shortest Path
+  - [ ] Cycle Detection (directed / undirected)
 * [x] Bit Manipulation
-* [ ] Shortest Path
