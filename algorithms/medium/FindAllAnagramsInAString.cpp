@@ -22,6 +22,10 @@ public:
 
         vector<int> answers;
 
+        if (p.size() > s.size()) {
+            return answers;
+        }
+
         for (int i = 0; i < s.size() - (p.size() - 1); i++) {
 
             windowFreq.clear();
