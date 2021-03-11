@@ -28,7 +28,11 @@ public:
 
         for (int i = 0; i < s.size() - (p.size() - 1); i++) {
 
-            windowFreq.clear();
+            // reset
+            for (auto& p : targetFreq) {
+                char key = p.first;
+                windowFreq[key] = 0;
+            }
             bool stop = false;
 
             for (int j = 0; j < p.size(); j++) {
@@ -53,24 +57,19 @@ public:
             else {
 
                 // compare whether targetFreq & windowFreq are identical
-                if (windowFreq.size() != targetFreq.size()) {
-                    continue;
+                bool allIdentical = true;
+                for (auto& p : targetFreq) {
+                    char key = p.first;
+                    int freq = p.second;
+
+                    if (windowFreq[key] != freq) {
+                        allIdentical = false;
+                        break;
+                    }
                 }
-                else {
-                    bool allIdentical = true;
-                    for (auto& p : windowFreq) {
-                        char key = p.first;
-                        char freq = p.second;
 
-                        if (targetFreq[key] != freq) {
-                            allIdentical = false;
-                            break;
-                        }
-                    }
-
-                    if (allIdentical) {
-                        answers.push_back(i);
-                    }
+                if (allIdentical) {
+                    answers.push_back(i);
                 }
             }
         }
