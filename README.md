@@ -98,7 +98,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 136 | [Single Number](https://leetcode.com/problems/single-number) | Easy | V |
 | 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) | Easy | V |
 | 412 | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz) | Easy | V |
-| 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) | Easy |  |
+| 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) | Easy | V |
 | 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy | V |
 | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram) | Easy |  |
 | 122 | [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii) | Easy |  |
