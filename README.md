@@ -67,7 +67,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 300 | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence) | Medium | V |
 | 207 | [Course Schedule](https://leetcode.com/problems/course-schedule) | Medium | V |
 | 438 | [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string) | Medium | V |
-| 148 | [Sort List](https://leetcode.com/problems/sort-list) | Medium |  |
+| 148 | [Sort List](https://leetcode.com/problems/sort-list) | Medium | V |
 | 139 | [Word Break](https://leetcode.com/problems/word-break) | Medium |  |
 | 56 | [Merge Intervals](https://leetcode.com/problems/merge-intervals) | Medium | V |
 | 221 | [Maximal Square](https://leetcode.com/problems/maximal-square) | Medium |  |
