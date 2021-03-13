@@ -100,7 +100,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 412 | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz) | Easy | V |
 | 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) | Easy | V |
 | 169 | [Majority Element](https://leetcode.com/problems/majority-element) | Easy | V |
-| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram) | Easy |  |
+| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram) | Easy | V |
 | 122 | [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii) | Easy |  |
 | 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy | V |
 | 171 | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number) | Easy |  |
