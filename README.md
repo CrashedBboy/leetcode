@@ -73,7 +73,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 221 | [Maximal Square](https://leetcode.com/problems/maximal-square) | Medium | V |
 | 142 | [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii) | Medium | V |
 | 34 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array) | Medium | V |
-| 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list) | Medium |  |
+| 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list) | Medium | V |
 | 79 | [Word Search](https://leetcode.com/problems/word-search) | Medium |  |
 | 322 | [Coin Change](https://leetcode.com/problems/coin-change) | Medium | V |
 | 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array) | Medium |  |
