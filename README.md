@@ -105,7 +105,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 283 | [Move Zeroes](https://leetcode.com/problems/move-zeroes) | Easy | V |
 | 171 | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number) | Easy | V |
 | 13 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) | Easy | V |
-| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate) | Easy |  |
+| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate) | Easy | V |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy | V |
 | 118 | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle) | Easy |  |
 | 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy |  |
