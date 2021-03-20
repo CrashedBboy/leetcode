@@ -108,7 +108,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate) | Easy | V |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy | V |
 | 118 | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle) | Easy | V |
-| 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy |  |
+| 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy | V |
 | 191 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits) | Easy |  |
 | 387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string) | Easy |  |
 | 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii) | Easy |  |
