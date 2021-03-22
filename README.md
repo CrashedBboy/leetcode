@@ -74,11 +74,11 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 142 | [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii) | Medium | V |
 | 34 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array) | Medium | V |
 | 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list) | Medium | V |
-| 79 | [Word Search](https://leetcode.com/problems/word-search) | Medium |  |
+| 79 | [Word Search](https://leetcode.com/problems/word-search) | Medium | V |
 | 322 | [Coin Change](https://leetcode.com/problems/coin-change) | Medium | V |
-| 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array) | Medium |  |
-| 55 | [Jump Game](https://leetcode.com/problems/jump-game) | Medium |  |
-| 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | Medium |  |
+| 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array) | Medium | V |
+| 55 | [Jump Game](https://leetcode.com/problems/jump-game) | Medium | V |
+| 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | Medium | V |
 | 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer) | Medium | V |
 | 31 | [Next Permutation](https://leetcode.com/problems/next-permutation) | Medium |  |
 | 152 | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray) | Medium |  |
@@ -107,10 +107,10 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 13 | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) | Easy | V |
 | 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate) | Easy | V |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | Easy | V |
-| 118 | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle) | Easy |  |
-| 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy |  |
-| 191 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits) | Easy |  |
-| 387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string) | Easy |  |
+| 118 | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle) | Easy | V |
+| 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy | V |
+| 191 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits) | Easy | V |
+| 387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string) | Easy | V |
 | 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii) | Easy |  |
 | 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | Easy | V |
 | 202 | [Happy Number](https://leetcode.com/problems/happy-number) | Easy |  |
