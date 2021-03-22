@@ -111,7 +111,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 268 | [Missing Number](https://leetcode.com/problems/missing-number) | Easy | V |
 | 191 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits) | Easy | V |
 | 387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string) | Easy | V |
-| 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii) | Easy |  |
+| 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii) | Easy | V |
 | 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | Easy | V |
 | 202 | [Happy Number](https://leetcode.com/problems/happy-number) | Easy |  |
 | 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs) | Easy | V |
