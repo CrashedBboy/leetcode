@@ -123,7 +123,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists) | Easy | V |
 | 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle) | Easy | V |
 | 66 | [Plus One](https://leetcode.com/problems/plus-one) | Easy | V |
-| 190 | [Reverse Bits](https://leetcode.com/problems/reverse-bits) | Easy |  |
+| 190 | [Reverse Bits](https://leetcode.com/problems/reverse-bits) | Easy | V |
 | 326 | [Power of Three](https://leetcode.com/problems/power-of-three) | Easy |  |
 | 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array) | Easy |  |
 | 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy | V |
