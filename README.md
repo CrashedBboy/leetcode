@@ -117,7 +117,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs) | Easy | V |
 | 101 | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree) | Easy | V |
 | 53 | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray) | Easy | V |
-| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | Easy |  |
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | Easy | V |
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum) | Easy | V |
 | 155 | [Min Stack](https://leetcode.com/problems/min-stack) | Easy | V |
 | 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists) | Easy | V |
