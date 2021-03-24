@@ -125,7 +125,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 66 | [Plus One](https://leetcode.com/problems/plus-one) | Easy | V |
 | 190 | [Reverse Bits](https://leetcode.com/problems/reverse-bits) | Easy | V |
 | 326 | [Power of Three](https://leetcode.com/problems/power-of-three) | Easy | V |
-| 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array) | Easy |  |
+| 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array) | Easy | V |
 | 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list) | Easy | V |
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy | V |
 | 172 | [Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes) | Easy |  |
