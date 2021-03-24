@@ -81,7 +81,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | Medium | V |
 | 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer) | Medium | V |
 | 31 | [Next Permutation](https://leetcode.com/problems/next-permutation) | Medium | V |
-| 152 | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray) | Medium |  |
+| 152 | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray) | Medium | V |
 | 146 | [LRU Cache](https://leetcode.com/problems/lru-cache) | Medium |  |
 | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters) | Medium |  |
 | 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | Medium |  |
