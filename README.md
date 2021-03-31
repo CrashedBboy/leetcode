@@ -130,7 +130,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | Easy | V |
 | 172 | [Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes) | Easy | V |
 | 125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome) | Easy | V |
-| 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix) | Easy |  |
+| 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix) | Easy | V |
 | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy |  |
 | 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx) | Easy |  |
 | 204 | [Count Primes](https://leetcode.com/problems/count-primes) | Easy |  |
