@@ -133,7 +133,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 14 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix) | Easy | V |
 | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy | V |
 | 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx) | Easy | V |
-| 204 | [Count Primes](https://leetcode.com/problems/count-primes) | Easy |  |
+| 204 | [Count Primes](https://leetcode.com/problems/count-primes) | Easy | V |
 | 163 | [Missing Ranges](https://leetcode.com/problems/missing-ranges) | Easy |  |
 | 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | Easy |  |
 
