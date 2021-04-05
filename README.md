@@ -134,7 +134,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy | V |
 | 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx) | Easy | V |
 | 204 | [Count Primes](https://leetcode.com/problems/count-primes) | Easy | V |
-| 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | Easy |  |
+| 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | Easy | V |
 | 230 | [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst) | Medium |  |
 
 ## Essential Concepts
