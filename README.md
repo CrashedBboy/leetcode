@@ -85,7 +85,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 146 | [LRU Cache](https://leetcode.com/problems/lru-cache) | Medium | V |
 | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters) | Medium | V |
 | 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | Medium | V |
-| 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree) | Medium |  |
+| 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree) | Medium | V |
 | 15 | [3Sum](https://leetcode.com/problems/3sum) | Medium | V |
 
 ## Top Interview Questions
@@ -156,7 +156,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Recursion
   - Two Pointers
   - Binary Search
-* Tree Traversal
+* Tree Traversal (Recursive/Iterative)
 * Search:
   - Binary Search
   - DFS
