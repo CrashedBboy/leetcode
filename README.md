@@ -84,7 +84,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 152 | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray) | Medium | V |
 | 146 | [LRU Cache](https://leetcode.com/problems/lru-cache) | Medium | V |
 | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters) | Medium | V |
-| 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | Medium |  |
+| 5 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring) | Medium | V |
 | 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree) | Medium |  |
 | 15 | [3Sum](https://leetcode.com/problems/3sum) | Medium | V |
 
