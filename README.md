@@ -134,39 +134,42 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy | V |
 | 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx) | Easy | V |
 | 204 | [Count Primes](https://leetcode.com/problems/count-primes) | Easy | V |
-| 163 | [Missing Ranges](https://leetcode.com/problems/missing-ranges) | Easy |  |
 | 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer) | Easy |  |
+| 230 | [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst) | Medium |  |
 
 ## Essential Concepts
 
 * Data Structure:
-  - [x] String
-  - [x] Array
-  - [x] Tree
-  - [x] Hash Table
-  - [x] Stack
-  - [x] Queue
-  - [x] Linked List
-  - [x] Heap
-  - [x] Set
+  - String
+  - Array
+  - Tree
+  - Hash Table
+  - Stack
+  - Queue
+  - Linked List
+  - Heap
+  - Set
 * Problem Solving Techniques:
-  - [x] Divide and Conquer
-  - [x] Dynamic Programming: Top down / Bottom Up
-  - [x] Backtracking
-  - [x] Recursion
-* [x] Tree Traversal
+  - Divide and Conquer
+  - Dynamic Programming: Top down / Bottom Up
+  - Backtracking
+  - Recursion
+  - Two Pointers
+  - Binary Search
+* Tree Traversal
 * Search:
-  - [x] Binary Search
-  - [x] DFS
-  - [x] BFS
+  - Binary Search
+  - DFS
+  - BFS
+  - KMP (Knuth–Morris–Pratt algorithm, for string matching)
 * Sort:
-  - [x] Selection Sort
-  - [x] Insertion Sort
-  - [x] Bubble Sort
-  - [x] Quick Sort
-  - [x] Merge Sort
-  - [x] Heap Sort
+  - Selection Sort
+  - Insertion Sort
+  - Bubble Sort
+  - Quick Sort
+  - Merge Sort
+  - Heap Sort
 * Graph:
-  - [ ] Shortest Path
-  - [ ] Cycle Detection (directed / undirected)
-* [x] Bit Manipulation
+  - Shortest Path
+  - Cycle Detection (directed / undirected)
+* Bit Manipulation
