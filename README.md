@@ -144,11 +144,15 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Array
   - Tree
   - Hash Table
+    - Chaining
+    - Open Addressing
   - Stack
   - Queue
   - Linked List
   - Heap
   - Set
+    - Ordered Set
+    - UnOrdered Set
 * Problem Solving Techniques:
   - Divide and Conquer
   - Dynamic Programming: Top down / Bottom Up
