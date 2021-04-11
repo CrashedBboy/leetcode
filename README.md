@@ -146,6 +146,9 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Hash Table
     - Chaining
     - Open Addressing
+      - Linear Probing
+      - Quadratic Hashing
+      - Double Hashing 
   - Stack
   - Queue
   - Linked List
