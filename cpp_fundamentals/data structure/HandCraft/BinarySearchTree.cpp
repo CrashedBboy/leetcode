@@ -61,12 +61,102 @@ public:
         }
     }
 
+    static BinaryTreeNode* minValueNode(BinaryTreeNode* root) {
+
+        BinaryTreeNode* current = root;
+        while (current && current->left != nullptr) {
+            current = current->left;
+        }
+
+        return current;
+    }
+
     // erase the first found
-    void erase(int x) {}
+    void erase(int x) {
+
+        BinaryTreeNode* targetParent;
+        bool targetAtLeft;
+        BinaryTreeNode* target = search(x, targetParent, targetAtLeft);
+
+        if (target == nullptr) { return; }
+
+        if (target->left == nullptr && target->right == nullptr) {
+            if (targetParent != nullptr) {
+                if (targetAtLeft) { targetParent->left = nullptr; }
+                else { targetParent->right = nullptr; }
+            }
+            else {
+                root = nullptr;
+            }
+
+            delete target;
+        }
+        else if (target->left == nullptr) {
+            // target->right is not null
+            if (targetParent != nullptr) {
+                if (targetAtLeft) { targetParent->left = target->right; }
+                else { targetParent->right = target->right; }
+            }
+            else {
+                root = target->right;
+            }
+
+            delete target;
+        }
+        else if (target->right == nullptr) {
+            // target->left is not null
+            if (targetParent != nullptr) {
+                if (targetAtLeft) { targetParent->left = target->left; }
+                else { targetParent->right = target->left; }
+            }
+            else {
+                root = target->left;
+            }
+
+            delete target;
+        }
+        else {
+            // both target->left and target->right are not null
+
+
+            // get successor & its parents, repalce the value of target by successor's
+            // connect successor's child under successor's paret
+            // free successor
+
+            ////////////////////////////////////////////////////
+        }
+    }
 
     bool contains(int x) {
 
+        BinaryTreeNode* current = root;
+
+        while (current != nullptr) {
+
+            if (x == current->val) { return true; }
+            else if (x > current->val) { current = current->right; }
+            else if (x < current->val) { current = current->left; }
+        }
+
         return false;
+    }
+
+    BinaryTreeNode* search(int x, BinaryTreeNode* targetParent, bool& targetAtLeft) {
+
+        targetParent = nullptr;
+        BinaryTreeNode* current = root;
+
+        while (current != nullptr) {
+            if (x == current->val) { break; }
+            else if (x > current->val) {
+                targetParent = current; current = current->right; targetAtLeft = false;
+            }
+            else if (x < current->val) {
+                targetParent = current; current = current->left; targetAtLeft = true;
+            }
+        }
+
+        return current;
     }
 
     void getSortedSequence() {
@@ -111,7 +201,9 @@ int main() {
 
     bst.getSortedSequence();
 
-
+    cout << bst.contains(2) << endl;
+    cout << bst.contains(1) << endl;
+    cout << bst.contains(5) << endl;
 
     return 0;
 }
