@@ -74,9 +74,6 @@ void BinarySearchTree::erase(int x) {
     BinaryTreeNode* targetParent = fakeNull;
     BinaryTreeNode* target = search(x, targetParent);
 
-    cout << "Target val = " << target->val << endl;
-    cout << "Target Parent val = " << targetParent->val << endl;
-
     if (target == nullptr) { return; }
 
     if (target->left == nullptr && target->right == nullptr) {
