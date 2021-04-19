@@ -23,7 +23,11 @@ private:
 class BinarySearchTree {
 
 public:
-    BinarySearchTree() : root(nullptr) {
+    BinarySearchTree() : root(nullptr), uniqueKey(false) {
+        fakeNull = new BinaryTreeNode(-1);
+    }
+
+    BinarySearchTree(bool unique) : root(nullptr), uniqueKey(unique) {
         fakeNull = new BinaryTreeNode(-1);
     }
 
@@ -40,6 +44,11 @@ public:
             while (true) {
 
                 if (x >= current->val) {
+
+                    // duplicated key is not allowed
+                    if (x == current->val && uniqueKey == true) {
+                        return;
+                    }
 
                     if (current->right == nullptr) {
                         current->right = newNode;
@@ -137,7 +146,7 @@ public:
             else {
                 successorChild = successor->right;
             }
-            
+
             if (successorParent->right == successor) {
                 successorParent->right = successorChild;
             }
@@ -147,7 +156,7 @@ public:
 
             // replace the value of target by successor's
             target->val = successor->val;
-            
+
             // free successor
             delete successor;
         }
@@ -214,25 +223,16 @@ public:
 private:
     BinaryTreeNode* root;
     BinaryTreeNode* fakeNull;
+    bool uniqueKey;
 };
 
 int main() {
 
-    BinarySearchTree bst;
+    BinarySearchTree bst (true);
 
     bst.insert(10);
-    bst.insert(15);
-    bst.insert(5);
+    bst.insert(10);
 
-    bst.getSortedSequence();
-
-    bst.erase(10);
-    bst.getSortedSequence();
-
-    bst.erase(15);
-    bst.getSortedSequence();
-
-    bst.erase(5);
     bst.getSortedSequence();
 
 
