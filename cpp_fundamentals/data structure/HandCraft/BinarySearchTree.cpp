@@ -23,7 +23,9 @@ private:
 class BinarySearchTree {
 
 public:
-    BinarySearchTree() : root(nullptr) {}
+    BinarySearchTree() : root(nullptr) {
+        fakeNull = new BinaryTreeNode(-1);
+    }
 
     void insert(int x) {
         BinaryTreeNode* newNode = new BinaryTreeNode(x);
@@ -61,10 +63,11 @@ public:
         }
     }
 
-    static BinaryTreeNode* minValueNode(BinaryTreeNode* root) {
+    static BinaryTreeNode* minValueNode(BinaryTreeNode* root, BinaryTreeNode* targetParent) {
 
         BinaryTreeNode* current = root;
         while (current && current->left != nullptr) {
+            targetParent = current;
             current = current->left;
         }
 
@@ -74,15 +77,19 @@ public:
     // erase the first found
     void erase(int x) {
 
-        BinaryTreeNode* targetParent;
-        bool targetAtLeft;
-        BinaryTreeNode* target = search(x, targetParent, targetAtLeft);
+        if (root == nullptr) { return; }
+
+        BinaryTreeNode* targetParent = fakeNull;
+        BinaryTreeNode* target = search(x, targetParent);
+
+        cout << "Target val = " << target->val << endl;
+        cout << "Target Parent val = " << targetParent->val << endl;
 
         if (target == nullptr) { return; }
 
         if (target->left == nullptr && target->right == nullptr) {
-            if (targetParent != nullptr) {
-                if (targetAtLeft) { targetParent->left = nullptr; }
+            if (targetParent != fakeNull) {
+                if (targetParent->left == target) { targetParent->left = nullptr; }
                 else { targetParent->right = nullptr; }
             }
             else {
@@ -93,8 +100,8 @@ public:
         }
         else if (target->left == nullptr) {
             // target->right is not null
-            if (targetParent != nullptr) {
-                if (targetAtLeft) { targetParent->left = target->right; }
+            if (targetParent != fakeNull) {
+                if (targetParent->left == target) { targetParent->left = target->right; }
                 else { targetParent->right = target->right; }
             }
             else {
@@ -105,8 +112,8 @@ public:
         }
         else if (target->right == nullptr) {
             // target->left is not null
-            if (targetParent != nullptr) {
-                if (targetAtLeft) { targetParent->left = target->left; }
+            if (targetParent != fakeNull) {
+                if (targetParent->left == target) { targetParent->left = target->left; }
                 else { targetParent->right = target->left; }
             }
             else {
@@ -118,12 +125,31 @@ public:
         else {
             // both target->left and target->right are not null
 
+            // get successor & its parentss
+            BinaryTreeNode* successorParent = target;
+            BinaryTreeNode* successor = BinarySearchTree::minValueNode(target->right, successorParent);
 
-            // get successor & its parents, repalce the value of target by successor's
-            // connect successor's child under successor's paret
+            // connect successor's child under successor's parent
+            BinaryTreeNode* successorChild;
+            if (successor->left != nullptr) {
+                successorChild = successor->left;
+            }
+            else {
+                successorChild = successor->right;
+            }
+            
+            if (successorParent->right == successor) {
+                successorParent->right = successorChild;
+            }
+            else {
+                successorParent->left = successorChild;
+            }
+
+            // replace the value of target by successor's
+            target->val = successor->val;
+            
             // free successor
-
-            ////////////////////////////////////////////////////
+            delete successor;
         }
     }
 
@@ -141,18 +167,17 @@ public:
         return false;
     }
 
-    BinaryTreeNode* search(int x, BinaryTreeNode* targetParent, bool& targetAtLeft) {
+    BinaryTreeNode* search(int x, BinaryTreeNode* targetParent) {
 
-        targetParent = nullptr;
         BinaryTreeNode* current = root;
 
         while (current != nullptr) {
             if (x == current->val) { break; }
             else if (x > current->val) {
-                targetParent = current; current = current->right; targetAtLeft = false;
+                targetParent = current; current = current->right;
             }
             else if (x < current->val) {
-                targetParent = current; current = current->left; targetAtLeft = true;
+                targetParent = current; current = current->left;
             }
         }
 
@@ -188,22 +213,28 @@ public:
 
 private:
     BinaryTreeNode* root;
+    BinaryTreeNode* fakeNull;
 };
 
 int main() {
 
     BinarySearchTree bst;
 
-    bst.insert(4);
-    bst.insert(3);
-    bst.insert(2);
-    bst.insert(1);
+    bst.insert(10);
+    bst.insert(15);
+    bst.insert(5);
 
     bst.getSortedSequence();
 
-    cout << bst.contains(2) << endl;
-    cout << bst.contains(1) << endl;
-    cout << bst.contains(5) << endl;
+    bst.erase(10);
+    bst.getSortedSequence();
+
+    bst.erase(15);
+    bst.getSortedSequence();
+
+    bst.erase(5);
+    bst.getSortedSequence();
+
 
     return 0;
 }
