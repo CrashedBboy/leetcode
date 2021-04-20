@@ -1,3 +1,29 @@
+/*
+
+seat reservation:
+N rows of seats, numbered from 1 to N;
+There're ten seats in each row (labelled from A to K, with letter 'I' omitted).
+
+   A_B_C___D_E_F_G___H_J_K
+1
+2
+.
+.
+.
+N
+
+
+Some of the seats are alrealdy reserved. The list of reserved seats is given as a string containing seat numbers seperated by single space:
+e.g. "1A 3C 2B". The reserved seats can be listed in any order.
+
+Your task is to allocate seats for as many four-person family as possible. family seats should be connected in the same row and can not be seperated by aisle or other reservation.
+However, family seats can only be seperated by an aisle when exactly 2 people sit on each side of the aisle.
+
+return max number of 4-person family that can be seated in the remaining unreserved seats.
+
+*/
+
+
 #include <string>
 #include <vector>
 #include <algorithm>

@@ -1,3 +1,14 @@
+/*
+QUESTION:
+
+Given an implementation of a function.
+
+Its params are non-empty array A of N non-negative int and non-empty array B of M non-negative int.
+The function return the min value that occurs in both arrays. If there's no such value, return -1
+
+There're some bug existing in the given implementation, correct it.
+*/
+
 #include <vector>
 #include <algorithm>
 

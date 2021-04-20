@@ -1,3 +1,13 @@
+/*
+
+Given N fractions, numbered from 0 to N-1.
+Your task is to count the number of occurrences of the fraction that appears most often.
+
+NOTE: two fractions may be equal even though they're in different form. e.g. 3/5 = 6/10
+
+The params are two arrays X and Y consisting of N int each (which represent the K-th fraction as X[K]/Y[K])
+*/
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>
