@@ -180,3 +180,11 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Shortest Path
   - Cycle Detection (directed / undirected)
 * Bit Manipulation
+* Object Oriented Programming
+  - Class & Object
+  - Access Modifier: `public`, `protected`, `private`
+  - Constructor
+  - Encapsulation
+  - Abstraction
+  - Inheritance
+  - Polymorphism
