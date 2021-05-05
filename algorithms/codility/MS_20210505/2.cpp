@@ -6,6 +6,9 @@ Return a list X, where X[i] indicates how many others are "similar" to CARS[i]
 Definition of similar:
 There're only one mismatch bit between two strings. e.g. "001" and "101" are similar
 
+Examples:
+1. CARS = ["100", "110", "010", "011", "100"], return [2,3,2,1,2]
+
 */
 
 

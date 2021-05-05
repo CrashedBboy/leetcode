@@ -6,6 +6,13 @@ the following constraints:
 
 * No three identical consecutive letters (e.g. "aaa" or "bbb" is not permitted)
 
+Examples:
+
+1. S = "a?bb", return "aabb"
+2. S = "??abb", return "ababb", "bbabb" or "baabb"
+3. S = "a?b?aa", return "aabbaa"
+4. S = "aa??aa", return "aabbaa"
+
 */
 
 
