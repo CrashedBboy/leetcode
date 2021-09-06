@@ -88,7 +88,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 | 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree) | Medium | V |
 | 15 | [3Sum](https://leetcode.com/problems/3sum) | Medium | V |
 
-## Top Interview Questions
+## Top Interview Questions(Easy)
 
 | # | Title | Difficulty | Completed |
 |:----:|:----|:-----:|:-----:|
