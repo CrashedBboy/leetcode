@@ -2,6 +2,7 @@
 #include <utility>
 #include <stack>
 #include <queue>
+#include <iostream>
 
 using namespace std;
 
@@ -41,28 +42,28 @@ public:
             }
         }
 
-        cout << "DFS" << endl;
 
-        int level = -1;
+        int level = 0;
         while (!q.empty()) {
             int num = q.size();
 
             while (num--) {
                 auto [row, col] = q.front(); q.pop();
 
-                if (row < 0 || row >= grid.size() || col < 0 || col >= grid[0].size()) continue;
+                for (int d = 0; d < 4; d++) {
+                    int r = row + directions[d];
+                    int c = col + directions[d+1];
 
-                if (grid[row][col] == 1) {
-                    cout << row << " " << col << endl;
-                    return level;
-                }
-                else if (grid[row][col] == 0) {
-                    q.push({row, col});
-                    grid[row][col] = 2;
+                    if (r < 0 || r >= grid.size() || c < 0 || c >= grid[0].size()) continue;
 
-                    for (int d = 0; d < 4; d++) {
-                        q.push({row + directions[d], col + directions[d+1]});
+                    if (grid[r][c] == 1) {
+                        return level;
                     }
+                    else if (grid[r][c] == 2) {
+                        continue;
+                    }
+                    grid[r][c] = 2;
+                    q.push({r, c});
                 }
             }
 
