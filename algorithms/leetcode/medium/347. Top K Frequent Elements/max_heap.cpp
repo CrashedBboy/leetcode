@@ -20,13 +20,13 @@ public:
 
         auto custom_cmp = [](NumFreq a, NumFreq b) { return a.second < b.second; };
 
-        priority_queue<NumFreq, vector<NumFreq>, decl(custom_cmp)> maxHeap {custom_cmp};
+        priority_queue<NumFreq, vector<NumFreq>, decltype(custom_cmp)> maxHeap {custom_cmp};
         for (auto& f : freq) {
             maxHeap.push(f);
         }
 
         for (int i = 0; i < k; i++) {
-            Freq f = maxHeap.top(); maxHeap.pop();
+            NumFreq f = maxHeap.top(); maxHeap.pop();
             ans.push_back(f.first);
         }
 
@@ -36,11 +36,16 @@ public:
 
 int main () {
 
-    vector<int> nums = {1,1,1,2,2,3};
-    int k = 2;
+    vector<int> nums = {1};
+    int k = 1;
 
     Solution sol;
     vector<int> ans = sol.topKFrequent(nums, k);
+
+    for (auto& a : ans) {
+        cout << a << ", ";
+    }
+    cout << endl;
 
     return 0;
 }
