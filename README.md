@@ -140,9 +140,10 @@ The journey of grinding [LeetCode](https://leetcode.com/).
 ## Essential Concepts
 
 * Data Structure:
-  - String
-  - Array
+  - String: string manipulation
+  - Array: two pointers, sliding window, searching, in-place modification
   - Tree
+  - Graphs
   - Hash Table
     - Chaining
     - Open Addressing
@@ -163,6 +164,7 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Recursion
   - Two Pointers
   - Binary Search
+  - Greedy
 * Tree Traversal (Recursive/Iterative)
 * Search:
   - Binary Search
