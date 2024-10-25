@@ -48,6 +48,7 @@ class Teacher : public Person {
 
 public:
 	// Constructors which inherit the constructor of parent class
+	// constructorw with member initializer list
 	Teacher(string name, int age, string subject) : Person(name, age), subject(subject) { }
 	Teacher(string name, int age) : Person(name, age), subject("") {}
 	Teacher() : Person(), subject("") {}
@@ -131,6 +132,15 @@ int main() {
 
 	Engineer me ("Austin", 25, "C++");
 	Teacher you ("Justin", 23, "Math");
+
+	// dynamic polymorphism
+	Person* someone = nullptr;
+
+	someone = &me;
+	someone->introduce();
+
+	someone = &you;
+	someone->introduce();
 
 	return 0;
 }
