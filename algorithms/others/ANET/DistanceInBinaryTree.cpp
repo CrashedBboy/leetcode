@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -42,15 +41,53 @@ public:
     }
 };
 
-int getTreeHeight(Node* root) {
-    if (root == nullptr) {
+// lowest common ancestor
+Node* findLCA(Node* root, int val1, int val2) {
+    if (!root) return nullptr;
+
+    if (root->data == val1 || root->data == val2) {
+        return root;
+    }
+
+    Node* left = findLCA(root->left, val1, val2);
+    Node* right = findLCA(root->right, val1, val2);
+
+    if (left && right) {
+        return root;
+    }
+
+    return (left? left : right);
+}
+
+int getDistanceFromRoot(Node* root, int target) {
+
+    if (!root) {
+        return -1;
+    }
+
+    if (root->data == target) {
         return 0;
     }
 
-    return max(getTreeHeight(root->right), getTreeHeight(root->left)) + 1;
+    int d = getDistanceFromRoot(root->right, target);
+    if (d == -1) {
+        d = getDistanceFromRoot(root->left, target);
+    }
+    return (d == -1? -1 : d+1);
 }
 
-int main () {
+int getNodeDistance(Node* root, int val1, int val2) {
+    Node* LCARoot = findLCA(root, val1, val2);
+    if (LCARoot) {
+        cout << "LCA" << LCARoot->data << endl;
+    }
+    return getDistanceFromRoot(LCARoot, val1) + getDistanceFromRoot(LCARoot, val2);
+}
+
+
+// in this testcase we use BST as a binary tree
+// but the solution will not assume it is a BST
+int main (void) {
     BST tree (10);
     tree.insert(15);
     tree.insert(18);
@@ -63,7 +100,10 @@ int main () {
     tree.insert(7);
     tree.insert(2);
 
-    cout << getTreeHeight(tree.root) << endl;
+    int distance = getNodeDistance(tree.root, 7, 13); // should be 6
+    cout << "Node Distance:" << distance << endl;
+
+    return 0;
 }
 
 /*
