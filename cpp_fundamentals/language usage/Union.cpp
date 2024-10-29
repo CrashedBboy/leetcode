@@ -21,3 +21,16 @@ int main() {
 
 	return 0;
 }
+
+/*
+Scenarios of using Union:
+
+1. Memory Optimization:
+When you have variables that are mutually exclusive in usage,
+such as in embedded systems, using a union saves memory by overlapping storage for different variables.
+
+2. Interpreting Data in Multiple Ways:
+Unions are useful for reading data in different formats,
+such as interpreting bytes from hardware registers 
+or network packets where the same memory location may need to be interpreted as different data types.
+*/
