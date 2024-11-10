@@ -157,6 +157,8 @@ The journey of grinding [LeetCode](https://leetcode.com/).
   - Set
     - Ordered Set
     - UnOrdered Set
+  - LRU Cache
+  - Ring Buffer
 * Problem Solving Techniques:
   - Divide and Conquer
   - Dynamic Programming: Top down / Bottom Up
