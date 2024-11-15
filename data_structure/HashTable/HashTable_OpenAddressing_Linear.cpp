@@ -29,7 +29,7 @@ public:
         // release all Key-Value pair in the array
         for (int i = 0; i < this->size; i++) {
             if (*(this->valid+i) == true) {
-                delete (this->data+i);
+                delete *(this->data+i);
             }
         }
         // release the array
@@ -41,12 +41,12 @@ public:
         this->resizeIfNeeded();
         int h = this->hash(key);
         while (*(this->valid + h) == true) {
-            if (**(this->data + h)->key == key) {
-                **(this->data + h)->value = val;
+            if ((*(this->data + h))->key == key) {
+                (*(this->data + h))->value = val;
                 return;
             }
             else {
-                h += 1;
+                h = (h + 1)%this->capacity;
             }
         }
         *(this->data + h) = new KeyValue(key, val);
@@ -56,11 +56,35 @@ public:
 
     // remove data for a specific key
     void clear(int key) {
-
+        int h = this->hash(key);
+        while( *(this->valid + h) == true) {
+            if ((*(this->data + h))->key == key) {
+                delete (*(this->data + h));
+                *(this->valid + h) = false;
+                this->size -= 1;
+                return;
+            }
+            else {
+                h = (h + 1) % this->capacity;
+            }
+        }
     }
 
     int get(int key, bool& found) {
+        found = false;
+        int h = this->hash(key);
+        while ( *(this->valid + h) == true ) {
 
+            if ( (*(this->data + h))->key == key ) {
+                found = true;
+                return (*(this->data + h))->value;
+            }
+            else {
+                h = (h + 1) % this->capacity;
+            }
+        }
+
+        return -1;
     }
 
 private:
@@ -80,15 +104,16 @@ private:
             }
             else {
                 this->capacity = newSize;
+                cout << "Size has been resized to " << this->capacity << endl;
             }
             
             // REHASHING
             for (int i = 0; i < this->size; i++) {
                 if (*(this->valid+i) == true) {
-                    int key = **(this->data+i)->key;
+                    int key = (*(this->data+i))->key;
                     int h = this->hash(key);
                     while (*(newValid+h) == true) {
-                        h += 1;
+                        h = (h + 1) % this->capacity;
                     }
                     *(newValid + h) = true;
                     *(newData + h) = *(this->data + i);
@@ -96,10 +121,9 @@ private:
             }
 
             free(this->valid);
-            free(this->data)
+            free(this->data);
             this->valid = newValid;
             this->data = newData;
-            
         }
     }
     void errorAlloc() {
@@ -111,3 +135,33 @@ private:
         return key % this->capacity;
     }
 };
+
+int main (void) {
+
+    HashTable ht;
+
+    ht.set(3, 1);
+    ht.set(4, 1);
+
+    bool found = false;
+    int v = ht.get(5, found);
+    if (found) {
+        cout << "yes" << endl;
+    }
+    else {
+        cout << "not found" << endl;
+    }
+
+    // test data integrity :
+    /*
+    1. set set get
+    2. set clear get
+    */
+    // test size dynamically allocation: reallocation & re-hashing
+    /*
+    1. set->set->set-> ...(resizing) ->set ->get->get->get...
+    */
+
+
+    return 0;
+}
