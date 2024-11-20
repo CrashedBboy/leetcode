@@ -97,7 +97,7 @@ private:
         if (this->capacity == this->size) {
             size_t newSize = this->capacity * 2;
 
-            KeyValue** newData = (KeyValue**)realloc(this->data, newSize * sizeof(KeyValue*));
+            KeyValue** newData = (KeyValue**)malloc(newSize * sizeof(KeyValue*));
             bool* newValid = (bool*)calloc(newSize, sizeof(bool));
             if (newData == nullptr || newValid == nullptr) {
                 this->errorAlloc();
@@ -110,7 +110,7 @@ private:
             // REHASHING
             for (int i = 0; i < this->size; i++) {
                 if (*(this->valid+i) == true) {
-                    int key = (*(this->data+i))->key;
+                    int key = (*(this->data + i))->key;
                     int h = this->hash(key);
                     while (*(newValid+h) == true) {
                         h = (h + 1) % this->capacity;
@@ -138,30 +138,50 @@ private:
 
 int main (void) {
 
-    HashTable ht;
-
-    ht.set(3, 1);
-    ht.set(4, 1);
-
     bool found = false;
-    int v = ht.get(5, found);
-    if (found) {
-        cout << "yes" << endl;
-    }
-    else {
-        cout << "not found" << endl;
-    }
+    int res = -1;
 
     // test data integrity :
     /*
     1. set set get
     2. set clear get
     */
+
+    // set -> set (overwrite) -> get
+    HashTable ht1;
+    ht1.set(3, 1);
+    ht1.set(3, 12);
+    res = ht1.get(3, found);
+    if (res != 12 || found == false) {
+        cout << "test failed" << endl;
+        return 0;
+    }
+
+    // set -> clear -> get
+    ht1.clear(3);
+    res = ht1.get(3, found);
+    if (res == 12 || found == true) {
+        cout << "test failed" << endl;
+        return 0;
+    }
+
     // test size dynamically allocation: reallocation & re-hashing
+    int N = 100000;
+    for (int i = 0; i < N; i++) {
+        ht1.set(i, i * 3);
+    }
+    for (int i = 0; i < N; i++) {
+        res = ht1.get(i, found);
+        if (!found || res != i*3) {
+            cout << "test failed" << endl;
+            return 0;
+        }
+    }
     /*
     1. set->set->set-> ...(resizing) ->set ->get->get->get...
     */
 
+    cout << "test passed" << endl;
 
     return 0;
 }
