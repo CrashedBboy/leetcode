@@ -25,35 +25,128 @@ public:
             this->capacity = HashTable::INIT_SIZE;
         }
     }
+
     ~HashTable() {
         // release every Node
+        for (int i = 0; i < this->capacity; i++) {
+            if ( *(this->valid + i) == true ) {
+                delete *(this->data + i);
+            }
+        }
         // release this->data
+        free (this->valid);
+        this->valid = nullptr;
         // release this->valid
+        free (this->data);
+        this->data = nullptr;
     }
+
     void set(int key, int val) {
+        // two scenarios: 1. the key exists in the table 2. the key is new
+        bool found = false;
+        int index = -1;
+        int foo = this->internalGet(key, found, index);
+        if (found) {
+            (*(this->data + index))->value = val;
+            return;
+        }
+        else {
+            this->resizeIfNeeded();
+            int home = this->hash(key);
+            int psl = 0;
+            Node* newNode = new Node(key, val, 0);
+            Node* it = newNode;
+            while (it != nullptr) {
+                int offset = (home + psl) % this->capacity;
+                if ( *(this->valid + offset) == true ) {
+                    if (psl > (*(this->data + offset))->psl ) {
+                        // here comes the robin hood
+                        Node* tmp = *(this->data + offset);
+                        it->psl = psl;
+                        *(this->data + offset) = it;
+                        it = tmp;
+                        home = this->hash(tmp->key);
+                        psl = tmp->psl;
+                        psl += 1;
+                    }
+                    else {
+                        psl += 1;
+                    }
+                }
+                else {
+                    it->psl = psl;
+                    *(this->data + offset) = it;
+                    it = nullptr;
+                }
+            }
+        }
+        // https://programming.guide/robin-hood-hashing.html
         // probing: goes linearly, along the way, keep checking each one's psl, looking for replacement
         // probing stop condition: 1. find the rich 2. find the empty
     }
     int get(int key, bool& found) {
-        // probing: a simple linear probing
-        // probing stop condition: 1. find the target key 2. find the empty
+        int index = -1;
+        return this->internalGet(key, found, index);
     }
     void clear(int key) {
+        int h = this->hash(key);
         // probing: linear probing
         // probing stop condition: 1. find the target key 2. find the empty
-
-        // remove the object (remember to free the Node*)
-
-        // shift the object behind which has non-zero psl
+        Node* it;
+        while( *(this->valid + h) == true ) {
+            it = *(this->data + h);
+            if ( it->key == key) {
+                // remove the object (remember to free the Node*)
+                delete it;
+                *(this->valid + h) == false;
+                *(this->data + h) == nullptr;
+                int prev = h;
+                int i = (prev + 1) % this->capacity;
+                // shift the object behind which has non-zero psl
+                while ( *(this->valid + i) == true && (*(this->data + i))->psl != 0 ) {
+                    (*(this->data + i))->psl -= 1;
+                    *(this->data + prev) = *(this->data + i);
+                    *(this->valid + i) = false;
+                    *(this->data + i) == nullptr;
+                    prev = i;
+                    i = (i+1) % this->capacity;
+                }
+            }
+            else {
+                h = (h + 1) % this->capacity;
+            }
+        }
     }
 private:
-    const static int INIT_SIZE;
+    const static int INIT_SIZE = 7;
     Node** data;
     bool* valid;
     int capacity;
     int size;
-    int hash() {}
-    void resizeIfNeeded() {}
+    int hash(int key) {
+        return key % this->capacity;
+    }
+    void resizeIfNeeded() {
+        // todo
+        this->error();
+    }
+    int internalGet(int key, int& found, int& index) {
+        int h = this->hash(key);
+        // probing: a simple linear probing
+        // probing stop condition: 1. find the target key 2. find the empty
+        found = false;
+        while (*(this->valid + h) == true) {
+            if ( (*(this->data + h))->key == key ) {
+                found = true;
+                index = h;
+                return (*(this->data + h))->value;
+            }
+            else {
+                h = (h + 1) % this->capacity;
+            }
+        }
+        return -1;
+    }
     void error() {
         cout << "bad allocation" << endl;
         exit(1);
