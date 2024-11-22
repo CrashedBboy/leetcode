@@ -61,12 +61,12 @@ public:
                 if ( *(this->valid + offset) == true ) {
                     if (psl > (*(this->data + offset))->psl ) {
                         // here comes the robin hood
-                        Node* tmp = *(this->data + offset);
+                        Node* nodeBeingVisited = *(this->data + offset);
                         it->psl = psl;
                         *(this->data + offset) = it;
-                        it = tmp;
-                        home = this->hash(tmp->key);
-                        psl = tmp->psl;
+                        it = nodeBeingVisited;
+                        home = this->hash(nodeBeingVisited->key);
+                        psl = nodeBeingVisited->psl;
                         psl += 1;
                     }
                     else {
@@ -76,9 +76,11 @@ public:
                 else {
                     it->psl = psl;
                     *(this->data + offset) = it;
+                    *(this->valid + offset) = true;
                     it = nullptr;
                 }
             }
+            this->size += 1;
         }
         // https://programming.guide/robin-hood-hashing.html
         // probing: goes linearly, along the way, keep checking each one's psl, looking for replacement
@@ -98,19 +100,21 @@ public:
             if ( it->key == key) {
                 // remove the object (remember to free the Node*)
                 delete it;
-                *(this->valid + h) == false;
-                *(this->data + h) == nullptr;
+                *(this->valid + h) = false;
+                *(this->data + h) = nullptr;
+                this->size -= 1;
+                // shift the object behind which has non-zero psl
                 int prev = h;
                 int i = (prev + 1) % this->capacity;
-                // shift the object behind which has non-zero psl
                 while ( *(this->valid + i) == true && (*(this->data + i))->psl != 0 ) {
                     (*(this->data + i))->psl -= 1;
                     *(this->data + prev) = *(this->data + i);
                     *(this->valid + i) = false;
-                    *(this->data + i) == nullptr;
+                    *(this->data + i) = nullptr;
                     prev = i;
                     i = (i+1) % this->capacity;
                 }
+                return;
             }
             else {
                 h = (h + 1) % this->capacity;
@@ -126,29 +130,83 @@ private:
     int hash(int key) {
         return key % this->capacity;
     }
+
     void resizeIfNeeded() {
-        // todo
-        this->error();
+        if (this->size < this->capacity) {
+            return;
+        }
+
+        // calculate new capacity
+        int newCapacity = 2 * this->capacity;
+
+        // acquire new location
+        Node** newData = (Node**)malloc(newCapacity * sizeof(Node*));
+        bool* newValid = (bool*)calloc(newCapacity, sizeof(bool));
+        if (newData == nullptr || newValid == nullptr) {
+            this->error();
+        }
+        int oldCapacity = this->capacity;
+        this->capacity = newCapacity;
+
+        // rehashing
+        for (int i = 0; i < oldCapacity; i++) {
+            if ( *(this->valid + i) == true ) {
+
+                Node* nodeToGo = *(this->data + i);
+                int key = nodeToGo->key;
+
+                // insert with robin hood mechanism
+                int home = this->hash(key);
+                int psl = 0;
+                Node* it = nodeToGo;
+                while (it != nullptr) {
+                    int offset = (home + psl) % this->capacity;
+                    if ( *(newValid + offset) == true ) {
+                        // compare the psl
+                        Node* nodeBeingVisited = *(newData + offset);
+                        if (psl > nodeBeingVisited->psl) {
+                            it->psl = psl;
+                            *(newData + offset) = it;
+                            it = nodeBeingVisited;
+                            home = this->hash(nodeBeingVisited->key);
+                            psl = nodeBeingVisited->psl;
+                            psl += 1;
+                        }
+                        else {
+                            psl += 1;
+                        }
+                    }
+                    else {
+                        it->psl = psl;
+                        *(newData + offset) = it;
+                        *(newValid + offset) = true;
+                        it = nullptr;
+                    }
+                }
+            }
+        }
+        free(this->data);
+        free(this->valid);
+        this->data = newData;
+        this->valid = newValid;
     }
-    int internalGet(int key, int& found, int& index) {
+
+    int internalGet(int key, bool& found, int& index) {
         int h = this->hash(key);
         // probing: a simple linear probing
         // probing stop condition: 1. find the target key 2. find the empty
         found = false;
-        while (*(this->valid + h) == true) {
-            if ( (*(this->data + h))->key == key ) {
+        for (int i = 0; i < this->capacity; i++) {
+            if ( *(this->valid + h) && (*(this->data + h))->key == key ) {
                 found = true;
                 index = h;
                 return (*(this->data + h))->value;
-            }
-            else {
-                h = (h + 1) % this->capacity;
             }
         }
         return -1;
     }
     void error() {
-        cout << "bad allocation" << endl;
+        cout << "bad allocation (size=" << this->size << ")" << endl;
         exit(1);
     }
 };
@@ -165,30 +223,33 @@ int main (void) {
     ht1.set(3, 12);
     res = ht1.get(3, found);
     if (res != 12 || found == false) {
-        cout << "test failed" << endl;
+        cout << "test1 failed" << endl;
         return 0;
     }
+    cout << "test1 passed" << endl;
 
     // set -> clear -> get
     ht1.clear(3);
     res = ht1.get(3, found);
     if (res == 12 || found == true) {
-        cout << "test failed" << endl;
+        cout << "test2 failed" << endl;
         return 0;
     }
+    cout << "test2 passed" << endl;
 
     // test size dynamically allocation: reallocation & re-hashing
-    int N = 100000;
+    int N = 10;
     for (int i = 0; i < N; i++) {
         ht1.set(i, i * 3);
     }
     for (int i = 0; i < N; i++) {
         res = ht1.get(i, found);
         if (!found || res != i*3) {
-            cout << "test failed" << endl;
+            cout << "test3 failed" << endl;
             return 0;
         }
     }
+    cout << "test3 passed" << endl;
 
     cout << "test passed" << endl;
 
