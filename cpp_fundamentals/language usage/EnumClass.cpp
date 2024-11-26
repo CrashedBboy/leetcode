@@ -20,3 +20,13 @@ int main() {
 
 	return 0;
 }
+
+
+/*
+
+Use enum class for modern C++ code:
+	Provides better type safety.
+	Avoids naming conflicts.
+	Explicit scoping improves code readability and maintainability.
+
+*/

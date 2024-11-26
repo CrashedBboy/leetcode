@@ -10,7 +10,7 @@ void sizeOfArray() {
     cout << "size of arr1: " << (sizeof(arr1)/sizeof(arr1[0])) << endl; // 5
 
     int* arr2 = (int*)malloc(sizeof(int) * 5);
-    cout << "size of arr2: " << (sizeof(arr2)/sizeof(arr2[0])) << endl; // 2 (sizeof(arr2) returns the size of 'pointer'!, which is 8 bytes in 64-bit machines)
+    cout << "size of arr2 != " << (sizeof(arr2)/sizeof(arr2[0])) << endl; // 2 (sizeof(arr2) returns the size of 'pointer'!, which is 8 bytes in 64-bit machines)
 
     free(arr2);
 }
@@ -41,3 +41,24 @@ int main (void) {
 
     return 0;
 }
+
+
+/*
+Output:
+
+size of arr1: 5
+size of arr2 != 2
+arr:
+0x12345678
+0x11223344
+carr:
+*(carr+0) = 78
+*(carr+1) = 56
+*(carr+2) = 34
+*(carr+3) = 12
+*(carr+4) = 44
+*(carr+5) = 33
+*(carr+6) = 22
+*(carr+7) = 11
+
+*/

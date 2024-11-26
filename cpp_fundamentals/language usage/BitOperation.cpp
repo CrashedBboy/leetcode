@@ -11,7 +11,7 @@ int main () {
     int a = 125, b = 45;
     a = a ^ b; // now a is (a ^ b)
     b = a ^ b; // now b is (a ^ b) ^ b, which is equal to a
-    a = a ^ b; // now a is (a ^ b) ^ a, which is equal to a
+    a = a ^ b; // now a is (a ^ b) ^ a, which is equal to b
     cout << "a: " << a << ", b: " << b << endl;
 
     // set n-th bit to 1 using OR
