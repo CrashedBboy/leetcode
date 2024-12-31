@@ -121,7 +121,7 @@ int main(void) {
     pthread_mutex_destroy(&lock); // always remember to uninitialize the lock
 
     /*
-    Don't use exit() or return in main program to prevent premature:
+    Don't use exit() or "return" in main program to prevent premature:
         Otherwise, it may happesn that the child thread is still running but 
         the parent thread closes the whole process
     */
