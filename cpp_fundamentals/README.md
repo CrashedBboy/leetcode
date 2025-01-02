@@ -14,6 +14,9 @@
 * Assertions
 * Bit operations
 * Console IO / File IO
+    - Console: `printf`, `scanf`, `puts`, `putchar`, `getchar`
+    - File: `fopen`, `fclose`, `fgets`, `fprintf`, `fscanf`
+    - Note: `gets()` is deprecated since it has no length check and may cause buffer-overflow
 * Struct & Union, and their alignment & padding
 * Enum
 * typedef
@@ -22,7 +25,12 @@
 * Memory manipulation:
     - allocation: malloc, realloc, calloc, free
     - byte-level: memcpy, memset,, memcmp
-    - string-level: strcpy, strncpy, strcat, strncat, strlen, strcmp, strncmp
+* String handling (in string.h)
+    - manipulation: `strcpy`, `strncpy`, `strcat`, `strncat`
+    - inspection: `strlen`, `strcmp`, `strncmp`
+    - searching: `strchr`, `strrchr`, `strstr`
+* Other standard library functions
+    - `atoi`, `atof`, `abs`
 * GDB debugging
 
 ## C++
