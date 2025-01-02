@@ -92,10 +92,18 @@ void flipNthBit(int& a, int N) {
 unsigned int reverseBits(unsigned int x) {
 
     unsigned int res;
-    for (int i = 0; i < sizeof(int)*8; i++) {
+    for (int i = 0; i < sizeof(res)*8; i++) {
 
         res = res<<1 | (x&1);
         x = x >> 1;
     }
     return res;
+}
+
+void binaryPrinter(unsigned int x) {
+  while (x) {
+    printf("%d", (x&1));
+    x = x >> 1;
+  }
+  printf("\n");
 }
