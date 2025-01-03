@@ -39,10 +39,11 @@
     - Diamond inheritance problem & virtual inheritance
     - Overriding
     - Overloading
-    - Encapsulation: `public`, `protected`, `private`
-    - Abstraction and access specifier: pure virtual function
-    - Polymorphism: virtual function
-    - `friend`
+    - Encapsulation: `public`, `protected`, `private`, default access specifier
+    - Abstraction: pure virtual function
+    - Runtime Polymorphism: virtual function
+    - Good practice: virtual destructor of base class
+    - `friend` specifier
     - constructor initializer
     - `final` specifier
 * reference, pass-by-reference

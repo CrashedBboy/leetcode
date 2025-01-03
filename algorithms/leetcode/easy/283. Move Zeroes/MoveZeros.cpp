@@ -21,6 +21,24 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    void moveZeroes(vector<int>& nums) {
+        // two pointers
+
+        int lastNonZero =   -1;
+        int visited     =   0;
+
+        while (visited < nums.size()) {
+            if (nums[visited] != 0) {
+                lastNonZero += 1;
+                swap(nums[lastNonZero], nums[visited]);
+            }
+            visited += 1;
+        }
+    }
+};
+
 int main () {
 
     vector<int> inputs = {0, 1, 0, 3, 12};
